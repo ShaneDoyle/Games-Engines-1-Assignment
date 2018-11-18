@@ -5,9 +5,9 @@ using UnityEngine;
 public class MapGeneration : MonoBehaviour
 {
 
-	// Use this for initialization
+    // Use this for initialization
     int heightScale = 5;
-    float detailScale = 5f;
+    float detailScale = 15f;
 
     // Use this for initialization
     void Start()
@@ -25,7 +25,4 @@ public class MapGeneration : MonoBehaviour
         mesh.RecalculateNormals();
         this.gameObject.AddComponent<MeshCollider>();
     }
-
-
-	
 }

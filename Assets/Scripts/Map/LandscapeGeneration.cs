@@ -20,8 +20,8 @@ public class LandscapeGeneration : MonoBehaviour
     public GameObject player;
 
     int planeSize = 10;
-    int halfTilesX = 10;
-    int halfTilesZ = 10;
+    int halfTilesX = 5;
+    int halfTilesZ = 5;
 
     Vector3 startPos;
 
@@ -35,9 +35,9 @@ public class LandscapeGeneration : MonoBehaviour
 
         float updateTime = Time.realtimeSinceStartup;
 
-        for(int x = -halfTilesX; x< halfTilesX; x++)
+        for(int x = -halfTilesX * 4; x< halfTilesX * 4; x++)
         {
-            for(int z = -halfTilesZ; z < halfTilesZ; z++)
+            for(int z = -halfTilesZ * 4; z < halfTilesZ * 4; z++)
             {
                 Vector3 pos = new Vector3((x * planeSize + startPos.x), 0, (z * planeSize + startPos.z));
                 GameObject t = (GameObject)Instantiate(plane, pos, Quaternion.identity);
@@ -64,9 +64,9 @@ public class LandscapeGeneration : MonoBehaviour
             int playerX = (int)(Mathf.Floor(player.transform.position.x / planeSize) * planeSize);
             int playerZ = (int)(Mathf.Floor(player.transform.position.z / planeSize) * planeSize);
 
-            for(int x = -halfTilesX; x < halfTilesX; x++)
+            for(int x = -halfTilesX * 4; x < halfTilesX * 4; x++)
             {
-                for(int z = -halfTilesZ; z < halfTilesZ; z++)
+                for(int z = -halfTilesZ * 4; z < halfTilesZ * 4; z++)
                 {
                     Vector3 pos = new Vector3((x * planeSize + playerX), 0, (z * planeSize + playerZ));
 
