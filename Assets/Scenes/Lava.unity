@@ -1790,7 +1790,7 @@ GameObject:
   - component: {fileID: 1409431238}
   - component: {fileID: 1409431237}
   m_Layer: 0
-  m_Name: Lava (4)
+  m_Name: Huge Lava
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
