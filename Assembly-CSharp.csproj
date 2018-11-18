@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\TentacleBody.cs" />
     <Compile Include="Assets\TentacleHead.cs" />
+    <None Include="Assets\Colour Changing.shader" />
     <None Include="Assets\LavaShader.shader" />
     <None Include="Assets\LavaWaves.shader" />
     <Reference Include="UnityEditor.StandardEvents">

@@ -179,11 +179,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1257224370}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.33, y: 10, z: -10}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: -1.33, y: 74, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1825474050}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &1257224372
 ParticleSystemRenderer:
@@ -225,7 +225,7 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.05
+  m_MaxParticleSize: 0.4
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -321,7 +321,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -490,8 +490,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.3
-      minScalar: 0.1
+      scalar: 1
+      minScalar: 0.6
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -873,7 +873,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 10, y: 1, z: 10}
+    m_Scale: {x: 300, y: 1, z: 300}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -1015,7 +1015,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 150
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1634,8 +1634,8 @@ ParticleSystem:
     x:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: -1
+      scalar: 20
+      minScalar: -20
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1687,8 +1687,8 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 3
-      scalar: -2
-      minScalar: 0
+      scalar: -15
+      minScalar: -25
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3644,7 +3644,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 1
     serializedVersion: 3
-    type: 1
+    type: 0
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -4784,15 +4784,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4739378118340074, guid: f7b016f72d5a060418c6284bafe8a841, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -48.8
+      value: -1200
       objectReference: {fileID: 0}
     - target: {fileID: 4739378118340074, guid: f7b016f72d5a060418c6284bafe8a841, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 131.7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4739378118340074, guid: f7b016f72d5a060418c6284bafe8a841, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -21.9
+      value: 29.5
       objectReference: {fileID: 0}
     - target: {fileID: 4739378118340074, guid: f7b016f72d5a060418c6284bafe8a841, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4828,6 +4828,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1613111746986910, guid: f7b016f72d5a060418c6284bafe8a841, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114245223019209746, guid: f7b016f72d5a060418c6284bafe8a841,
+        type: 2}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4860,7 +4865,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1825474050}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1758847293
 Light:
@@ -4947,7 +4952,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 104
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -4972,9 +4977,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1825474047}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 10, z: -10}
+  m_LocalPosition: {x: -1203, y: 10, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1257224371}
   - {fileID: 1758847292}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -4985,7 +4991,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1825474047}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0147ff297a3ae904cab06c040d0b44c0, type: 3}
   m_Name: 
@@ -4999,13 +5005,13 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1825474047}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c7cb1c9a265aa742b5ff5b04a7cf513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 234
-  moveSpeed: 40
+  rotationSpeed: 150
+  moveSpeed: 20
   bulletSpawnPoint: {fileID: 0}
   bulletPrefab: {fileID: 0}
   Health: 3
