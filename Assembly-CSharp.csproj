@@ -67,7 +67,8 @@
     <Compile Include="Assets\Scripts\Map\LandscapeGeneration.cs" />
     <Compile Include="Assets\Scripts\Map\MapGeneration.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\Snowman\RotateBall.cs" />
+    <Compile Include="Assets\Scripts\Snowbomb\MoveSnowbomb.cs" />
+    <Compile Include="Assets\Scripts\Snowbomb\RotateBall.cs" />
     <Compile Include="Assets\TentacleBody.cs" />
     <Compile Include="Assets\TentacleHead.cs" />
     <None Include="Assets\Colour Changing.shader" />
