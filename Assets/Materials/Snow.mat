@@ -9,7 +9,7 @@ Material:
   m_Name: Snow
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 2
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -60,7 +60,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 0.414
-    - _Glossiness: 0.519
+    - _Glossiness: 0.583
     - _GlossyReflections: 1
     - _Metallic: 0.273
     - _Mode: 0
@@ -72,5 +72,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.5449003, g: 0.70674795, b: 0.745283, a: 1}
-    - _EmissionColor: {r: 0.32831967, g: 0.47686934, b: 0.5849056, a: 1}
+    - _Color: {r: 0.26517445, g: 0.5300221, b: 0.5566038, a: 1}
+    - _EmissionColor: {r: 0.236222, g: 0.29614946, b: 0.33610108, a: 1}
