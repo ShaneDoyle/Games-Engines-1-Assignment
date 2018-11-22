@@ -6,7 +6,9 @@ public class MoveSnowbomb : MonoBehaviour
 {
 
     public Transform target;
-    public float time = 8;
+    public GameObject explosioneffect;
+    public float time = 10f;
+    public float hp = 3;
     float speed;
 
     Vector3 toTarget;
@@ -14,6 +16,7 @@ public class MoveSnowbomb : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        /*
         toTarget = target.transform.position - transform.position;
 
         float dist = toTarget.magnitude;
@@ -23,11 +26,8 @@ public class MoveSnowbomb : MonoBehaviour
 
 
         float a1 = Mathf.Acos(Vector3.Dot(transform.forward, toTarget));
-        Debug.Log(Mathf.Rad2Deg * a1);
-
         float a2 = Vector3.Angle(transform.forward, toTarget);
-
-        Debug.Log(a2);
+        */
 
 
     }
@@ -35,17 +35,32 @@ public class MoveSnowbomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        transform.position = Vector3.MoveTowards(transform.position, target.position , speed * Time.deltaTime);
+        transform.localScale += new Vector3(0.001F, 0.001F, 0.001F); //Increase size like snowball!
+        time -= 0.001f;
+        transform.position = Vector3.MoveTowards(transform.position, target.position, time * Time.deltaTime);
         //transform.LookAt(target);
-        transform.Rotate(0,5,0);
+        transform.Rotate(0, 10, 0);
 
+        if (hp == 0)
+        {
+            hp = -1;
+            Explode();
+        }
+    }
 
+    //When bomb dies, explode!
+    void Explode()
+    {
+        //Instantiate(explosioneffect, transform.position, transform.rotation);
+        Destroy(gameObject);
+    }
 
-        //transform.position += toTarget * speed * Time.deltaTime;
-
-        // transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime);
-
-
+    //Kill self if touching a player.
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            hp = 0;
+        }
     }
 }
