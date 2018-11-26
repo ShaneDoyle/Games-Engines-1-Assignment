@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
 
     public float speed = 5f;
+    public float lookspeed = 1f;
     private PlayerMotor motor;
 
 	// Use this for initialization
@@ -30,7 +31,15 @@ public class PlayerController : MonoBehaviour
 
         Vector3 velocity = (moveHorizontal + moveVertical).normalized * speed;
 
-        //Apply movement!
+        //Apply movement
         motor.Move(velocity);
+
+
+        //Apply some rotation so we can look with the mouse or right analog stick.
+        float yRotation = Input.GetAxisRaw("Mouse X");
+        Vector3 rotation = new Vector3(0f, yRotation, 0f) * lookspeed;
+        motor.Rotate(rotation);
+
+        //Camrea
 	}
 }
