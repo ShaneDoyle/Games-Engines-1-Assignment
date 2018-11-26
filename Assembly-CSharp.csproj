@@ -63,9 +63,11 @@
   <ItemGroup>
     <Compile Include="Assets\CameraController.cs" />
     <Compile Include="Assets\Lerp.cs" />
-    <Compile Include="Assets\PlayerControls.cs" />
+    <Compile Include="Assets\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Map\LandscapeGeneration.cs" />
     <Compile Include="Assets\Scripts\Map\MapGeneration.cs" />
+    <Compile Include="Assets\Scripts\PlayerControls.cs" />
+    <Compile Include="Assets\Scripts\PlayerMotor.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Snowbomb\MoveSnowbomb.cs" />
     <Compile Include="Assets\Scripts\Snowbomb\RotateBall.cs" />

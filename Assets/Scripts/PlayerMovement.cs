@@ -41,14 +41,28 @@ public class PlayerMovement : MonoBehaviour
         {
             Application.Quit();
         }
-        transform.Translate(0, 0, Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
-        transform.Rotate(0, Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime, 0);
+        transform.Translate(0, 0, Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);  //Forward & Back
+        transform.Translate(Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime, 0, 0); //Left & Right
+        //transform.Rotate(0, Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime, 0);
 
+
+        //X
         float yRotation = Input.GetAxisRaw("Mouse X");
 
         Vector3 rotation = new Vector3(0f, yRotation, 0f) * 1;
 
         transform.Rotate(rotation);
+
+        //Y
+        float xRotation = Input.GetAxisRaw("Mouse Y");
+
+        Vector3 camerarotation = new Vector3(xRotation, 0f, 0f) * 1;
+
+        transform.Rotate(rotation);
+
+
+
+
 
         //Jump test
         if (Input.GetKey(KeyCode.Space) && canJump == true)
