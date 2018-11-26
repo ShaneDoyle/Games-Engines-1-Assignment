@@ -23,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
     }
 
     IEnumerator ShootCooldown()
@@ -44,6 +43,12 @@ public class PlayerMovement : MonoBehaviour
         }
         transform.Translate(0, 0, Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
         transform.Rotate(0, Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime, 0);
+
+        float yRotation = Input.GetAxisRaw("Mouse X");
+
+        Vector3 rotation = new Vector3(0f, yRotation, 0f) * 1;
+
+        transform.Rotate(rotation);
 
         //Jump test
         if (Input.GetKey(KeyCode.Space) && canJump == true)
