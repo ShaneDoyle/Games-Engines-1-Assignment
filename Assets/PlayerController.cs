@@ -40,6 +40,9 @@ public class PlayerController : MonoBehaviour
         Vector3 rotation = new Vector3(0f, yRotation, 0f) * lookspeed;
         motor.Rotate(rotation);
 
-        //Camrea
-	}
+        //Camera
+        float xRotation = Input.GetAxisRaw("Mouse Y");
+        Vector3 camerarotation = new Vector3(xRotation, 0f, 0f) * lookspeed;
+        motor.RotateCamera(camerarotation);
+    }
 }

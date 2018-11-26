@@ -5,8 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMotor : MonoBehaviour
 {
+    public Camera cam;
     private Vector3 velocity = Vector3.zero;
     private Vector3 rotation = Vector3.zero;
+    private Vector3 camerarotation = Vector3.zero;
+
+
+
 
     private Rigidbody rb;
 
@@ -26,10 +31,16 @@ public class PlayerMotor : MonoBehaviour
         velocity = _velocity;
     }
 
-    //Get a rotation vector
+    //Get a rotation vector.
     public void Rotate(Vector3 _rotation)
     {
         rotation = _rotation;
+    }
+
+    //Camera rotate function.
+    public void RotateCamera(Vector3 _camerarotation)
+    {
+        camerarotation = _camerarotation;
     }
 
 
@@ -52,6 +63,10 @@ public class PlayerMotor : MonoBehaviour
     void PerformRotation()
     {
         rb.MoveRotation(rb.rotation * Quaternion.Euler (rotation));
+        if(cam != null)
+        {
+            cam.transform.Rotate(camerarotation * -1);
+        }
     }
 
 
