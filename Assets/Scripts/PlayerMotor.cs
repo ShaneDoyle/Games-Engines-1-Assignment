@@ -5,17 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMotor : MonoBehaviour
 {
+    //Movement Variables.
     public Camera cam;
     private Vector3 velocity = Vector3.zero;
     private Vector3 rotation = Vector3.zero;
     private Vector3 camerarotation = Vector3.zero;
-
-
-
-
     private Rigidbody rb;
 
-
+    //Shooting Variables.
+    public GameObject bulletSpawnPoint;
+    public GameObject bulletPrefab;
 
 
 
@@ -48,6 +47,14 @@ public class PlayerMotor : MonoBehaviour
     {
         PerformMovement();
         PerformRotation();
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            GameObject bullet = GameObject.Instantiate<GameObject>(bulletPrefab);
+            bullet.transform.position = bulletSpawnPoint.transform.position;
+            bullet.transform.rotation = transform.rotation;
+        }
+
     }
 
     //Move the rigidbody with the velocity vector.
