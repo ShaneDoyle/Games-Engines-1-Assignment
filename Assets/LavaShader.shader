@@ -42,8 +42,8 @@
 				o.vertex = UnityObjectToClipPos(v.vertex);
 
 				float3 worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
-				o.vertex.y += sin(worldPos.x + _Time.w * 1);
-				o.vertex.y += sin(worldPos.z + _Time.w);
+				o.vertex.y += sin(worldPos.x + _Time.w) * 0.1f;
+				//o.vertex.y += sin(worldPos.z + _Time.w);
 
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 				UNITY_TRANSFER_FOG(o,o.vertex);

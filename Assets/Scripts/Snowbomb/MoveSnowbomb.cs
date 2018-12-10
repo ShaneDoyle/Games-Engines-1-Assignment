@@ -22,9 +22,9 @@ public class MoveSnowbomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.localScale += new Vector3(0.0005F, 0.0005F, 0.0005F); //Increase size like snowball!
-        time -= 0.001f;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, time * Time.deltaTime);
+        // transform.localScale += new Vector3(0.0005F, 0.0005F, 0.0005F); //Increase size like snowball!
+        //time -= 0.001f;
+        //transform.position = Vector3.MoveTowards(transform.position, target.position, time * Time.deltaTime);
         transform.Rotate(0, 10, 0);
 
         if (hp == 0)
