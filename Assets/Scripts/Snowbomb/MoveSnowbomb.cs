@@ -8,6 +8,7 @@ public class MoveSnowbomb : MonoBehaviour
     public Transform target;
     public float time = 10f;
     public float hp = 3;
+    public float x = 0;
     float speed;
 
     Vector3 toTarget;
@@ -29,6 +30,14 @@ public class MoveSnowbomb : MonoBehaviour
 
         FindClosestPlayer();
 
+        x += 8;
+
+        if (x > 360.0f)
+        {
+            x = 0.0f;
+        }
+
+        transform.localRotation = Quaternion.Euler(0, x, 0);
 
 
         if (hp == 0)
@@ -53,7 +62,8 @@ public class MoveSnowbomb : MonoBehaviour
             }
         }
 
-        transform.Rotate(0,0,0);
+
+        transform.Rotate(0, 0, 0);
         transform.position = Vector3.MoveTowards(transform.position, closestPlayer.transform.position, 0.05f);
     }
 

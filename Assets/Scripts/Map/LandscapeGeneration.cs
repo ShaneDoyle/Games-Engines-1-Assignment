@@ -17,6 +17,7 @@ class Tile
 public class LandscapeGeneration : MonoBehaviour
 {
     public GameObject plane;
+    public GameObject lavaplane;
     public GameObject player;
 
     int planeSize = 10;
@@ -35,12 +36,18 @@ public class LandscapeGeneration : MonoBehaviour
 
         float updateTime = Time.realtimeSinceStartup;
 
-        for(int x = -halfTilesX * 4; x< halfTilesX * 4; x++)
+        for(int x = -5; x < 32; x++)
         {
-            for(int z = 1; z <2; z++)
+            for (int z = 1; z < 6; z++)
             {
                 Vector3 pos = new Vector3((x * planeSize + startPos.x), 0, (z * planeSize + startPos.z));
                 GameObject t = (GameObject)Instantiate(plane, pos, Quaternion.identity);
+                //Make Middle
+                if (z != 2 || x < 0)
+                { 
+                    t = (GameObject)Instantiate(lavaplane, pos, Quaternion.identity);
+                }
+
 
                 string tilename = "Tile_" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
                 t.name = tilename;
@@ -67,7 +74,7 @@ public class LandscapeGeneration : MonoBehaviour
 
             for(int x = -halfTilesX * 4; x < halfTilesX * 4; x++)
             {
-                for(int z = 1; z < 2; z++)
+                for(int z = 1; z < 6; z++)
                 {
                     Vector3 pos = new Vector3((x * planeSize + playerX), 0, (z * planeSize + playerZ));
 
