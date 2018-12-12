@@ -6,8 +6,8 @@ public class MapGeneration : MonoBehaviour
 {
 
     // Use this for initialization
-    int heightScale = 1;
-    float detailScale = 30f;
+    int heightScale = 4;
+    float detailScale = 20f;
 
     // Use this for initialization
     void Start()
