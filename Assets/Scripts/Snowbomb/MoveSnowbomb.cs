@@ -53,8 +53,8 @@ public class MoveSnowbomb : MonoBehaviour
             }
         }
 
-        transform.LookAt(closestPlayer.transform.position);
-        Debug.DrawLine(this.transform.position, closestPlayer.transform.position);
+        transform.Rotate(0,0,0);
+        transform.position = Vector3.MoveTowards(transform.position, closestPlayer.transform.position, 0.05f);
     }
 
 
