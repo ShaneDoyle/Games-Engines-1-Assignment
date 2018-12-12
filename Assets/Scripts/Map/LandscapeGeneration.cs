@@ -36,16 +36,21 @@ public class LandscapeGeneration : MonoBehaviour
 
         float updateTime = Time.realtimeSinceStartup;
 
-        for(int x = -5; x < 32; x++)
+        for(int x = -5; x < 5; x++)
         {
             for (int z = 1; z < 6; z++)
             {
                 Vector3 pos = new Vector3((x * planeSize + startPos.x), 0, (z * planeSize + startPos.z));
-                GameObject t = (GameObject)Instantiate(plane, pos, Quaternion.identity);
+                GameObject t;
                 //Make Middle
                 if (z != 2 || x < 0)
                 { 
                     t = (GameObject)Instantiate(lavaplane, pos, Quaternion.identity);
+                }
+                else
+                {
+                    t = (GameObject)Instantiate(lavaplane, pos, Quaternion.identity);
+                    t = (GameObject)Instantiate(plane, pos, Quaternion.identity);
                 }
 
 
@@ -62,6 +67,7 @@ public class LandscapeGeneration : MonoBehaviour
 	void Update ()
     {
         //To int position.
+        /*
         int xMove = (int)(player.transform.position.x - startPos.x);
         int zMove = (int)(player.transform.position.z - startPos.z);
 
@@ -111,6 +117,8 @@ public class LandscapeGeneration : MonoBehaviour
             tiles = newTerrain;
 
             startPos = player.transform.position;
+            
         }
+    */
 	}
 }
