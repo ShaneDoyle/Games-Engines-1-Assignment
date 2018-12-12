@@ -37,7 +37,7 @@ public class LandscapeGeneration : MonoBehaviour
 
         for(int x = -halfTilesX * 4; x< halfTilesX * 4; x++)
         {
-            for(int z = -halfTilesZ * 4; z < halfTilesZ * 4; z++)
+            for(int z = 1; z <2; z++)
             {
                 Vector3 pos = new Vector3((x * planeSize + startPos.x), 0, (z * planeSize + startPos.z));
                 GameObject t = (GameObject)Instantiate(plane, pos, Quaternion.identity);
@@ -46,6 +46,7 @@ public class LandscapeGeneration : MonoBehaviour
                 t.name = tilename;
                 Tile tile = new Tile(t, updateTime);
                 tiles.Add(tilename, tile);
+               
             }
         }
 	}
@@ -66,7 +67,7 @@ public class LandscapeGeneration : MonoBehaviour
 
             for(int x = -halfTilesX * 4; x < halfTilesX * 4; x++)
             {
-                for(int z = -halfTilesZ * 4; z < halfTilesZ * 4; z++)
+                for(int z = 1; z < 2; z++)
                 {
                     Vector3 pos = new Vector3((x * planeSize + playerX), 0, (z * planeSize + playerZ));
 

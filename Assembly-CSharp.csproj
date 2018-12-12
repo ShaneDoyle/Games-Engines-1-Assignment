@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Snowbomb\MoveSnowbomb.cs" />
     <Compile Include="Assets\Scripts\Snowbomb\RotateBall.cs" />
+    <Compile Include="Assets\Scripts\TileTexture.cs" />
     <Compile Include="Assets\TankRotateCannon.cs" />
     <Compile Include="Assets\TentacleBody.cs" />
     <Compile Include="Assets\TentacleHead.cs" />
