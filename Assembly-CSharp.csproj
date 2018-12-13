@@ -61,13 +61,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Bullet.cs" />
     <Compile Include="Assets\CameraController.cs" />
     <Compile Include="Assets\CameraOnPlayers.cs" />
     <Compile Include="Assets\CopyRotation.cs" />
     <Compile Include="Assets\Lerp.cs" />
     <Compile Include="Assets\Player.cs" />
     <Compile Include="Assets\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\Camera\MiddleOfPlayersLocation.cs" />
     <Compile Include="Assets\Scripts\Goo-Bomb\MoveSnowbomb.cs" />
     <Compile Include="Assets\Scripts\Goo-Bomb\RotateBall.cs" />

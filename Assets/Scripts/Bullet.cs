@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 10;
+    public float speed = 20;
+    public float gravity = 0.02f;
     // Use this for initialization
     void Start()
     {
@@ -19,6 +20,16 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, 0, speed * Time.deltaTime);
+        gravity += 0.001f;
+        transform.Translate(0, -gravity, speed * Time.deltaTime);
+    }
+
+    //Kill self if touching a player.
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
     }
 }

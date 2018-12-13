@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankRotateCannon : MonoBehaviour {
+public class TankRotateCannon : MonoBehaviour
+{
 
 	//Use this for initialization
 	void Start ()

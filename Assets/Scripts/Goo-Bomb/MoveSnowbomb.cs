@@ -13,34 +13,35 @@ public class MoveSnowbomb : MonoBehaviour
 
     Vector3 toTarget;
 
-    // Use this for initialization
+    //Emission of HP.
+    Color color = Color.green;
+    Renderer rend;
+
+    //Use this for initialization
     void Start()
     {
         
     }
     
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
-        // transform.localScale += new Vector3(0.0005F, 0.0005F, 0.0005F); //Increase size like snowball!
-        //time -= 0.001f;
-        //transform.position = Vector3.MoveTowards(transform.position, target.position, time * Time.deltaTime);
-        //transform.Rotate(0, 10, 0);
-
         FindClosestPlayer();
 
+        //Rolling Stuff
         x += 8;
-
         if (x > 360.0f)
         {
             x = 0.0f;
         }
-
         transform.localRotation = Quaternion.Euler(0, x, 0);
 
+        GetComponent<Renderer>().material.color = color;
+        GetComponent<Renderer>().material.SetColor("_EmissionColor", color * (hp * 0.2f));
 
-        if (hp == 0)
+        //Death
+        if (hp <= 0)
         {
             Explode();
         }
@@ -80,9 +81,15 @@ public class MoveSnowbomb : MonoBehaviour
     //Kill self if touching a player.
     void OnCollisionEnter(Collision col)
     {
+        Debug.Log("Touching");
         if (col.gameObject.tag == "Player")
         {
             hp = 0;
+        }
+
+        if (col.gameObject.tag == "Bullet")
+        {
+            hp -= 1;
         }
 
     }
