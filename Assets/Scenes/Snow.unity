@@ -6582,7 +6582,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: a3fae17ebfafb5746b55b32ece685125, type: 2}
+  - {fileID: 2100000, guid: c4394e789f870e24e94fbefffbdaa529, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6807,7 +6807,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.49019608, g: 0.14463064, b: 0.14117649, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -6876,7 +6876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2a1fe7f3da2674a9be027d1fca2127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 141822630}
+  target: {fileID: 652257851}
   LerpTime: 1
   cameraDistance: 10
 --- !u!114 &1825474053

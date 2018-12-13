@@ -22,8 +22,8 @@ public class TileTexture : MonoBehaviour
     void Update ()
     {
         //Go from up to down.
-        f += 0.005f * reverse;
-        if(f >= 0.25f || f<= -0.25f)
+        f += 0.003f * reverse;
+        if(f >= 0.15f || f<= -0.15f)
         {
             reverse *= -1;
         }
