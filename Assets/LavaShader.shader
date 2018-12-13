@@ -1,5 +1,7 @@
 ﻿Shader "N3K/LavaShader"
 {
+
+
 	Properties
 	{
 		_MainTex("Texture", 2D) = "white" {}
