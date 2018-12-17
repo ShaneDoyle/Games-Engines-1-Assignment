@@ -36,7 +36,7 @@ public class LandscapeGeneration : MonoBehaviour
 
         float updateTime = Time.realtimeSinceStartup;
 
-        for(int x = -5; x < 15; x++)
+        for(int x = -5; x < 10; x++)
         {
             for (int z = 1; z < 6; z++)
             {

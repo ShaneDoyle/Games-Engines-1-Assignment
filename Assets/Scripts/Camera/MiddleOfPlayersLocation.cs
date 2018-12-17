@@ -9,11 +9,18 @@ public class MiddleOfPlayersLocation : MonoBehaviour
     private float PreviousCameraLocation = 0;
     private int NumOfPlayers = 0;
 
-    private float StartCamera = 1f;
-    private float StartCamera2 = 0.3f;
+    private float StartCamera = 0.15f;
 
+    //Use this for initialization
     void Start()
     {
+        Player[] allPlayers = GameObject.FindObjectsOfType<Player>();
+
+        foreach (Player currentPlayer in allPlayers)
+        {
+            CameraLocation += currentPlayer.transform.position.x / allPlayers.Length;
+            test = new Vector3(Mathf.Lerp(transform.position.x, CameraLocation, 1), 0, 0);
+        }
         transform.position = test;
     }
 
@@ -25,11 +32,10 @@ public class MiddleOfPlayersLocation : MonoBehaviour
         foreach (Player currentPlayer in allPlayers)
         {
             CameraLocation += currentPlayer.transform.position.x / allPlayers.Length ;
-            test = new Vector3(Mathf.Lerp(transform.position.x,CameraLocation,0.3f), 0, 0);
-            
+            test = new Vector3(Mathf.Lerp(transform.position.x,CameraLocation,StartCamera), 0, 0);
         }
 
-        //Set camera to position and reset to re-do coordinates.
+        //Set camera to position and reset to re-do coordinates
         transform.position = test;
         PreviousCameraLocation = CameraLocation;
         CameraLocation = 0;

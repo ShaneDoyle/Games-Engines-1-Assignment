@@ -7,8 +7,10 @@ public class MoveSnowbomb : MonoBehaviour
     //Input Variables.
     public Transform target;
     public float hp = 5;
+    private float maxhp;
     public float speed;
     public AudioSource deathSound;
+
 
     Vector3 toTarget;
 
@@ -28,12 +30,15 @@ public class MoveSnowbomb : MonoBehaviour
     private SphereCollider myCollider;
     private float x = 0;
     private bool DeathSoundPlayed = false;
+    private bool Expand = true;
 
     //Use this for initialization
     void Start()
     {
         myCollider = GetComponent<SphereCollider>();
+        maxhp = hp;
         speed *= 0.01f;
+
     }
 
 
@@ -41,7 +46,7 @@ public class MoveSnowbomb : MonoBehaviour
     void Update()
     {
         if (hp != 0)
-        { 
+        {
             FindClosestPlayer();
             x += 8;
         }
@@ -58,7 +63,14 @@ public class MoveSnowbomb : MonoBehaviour
         transform.localRotation = Quaternion.Euler(0, x, 0);
 
         GetComponent<Renderer>().material.color = color;
-        GetComponent<Renderer>().material.SetColor("_EmissionColor", color * (hp * 0.10f));
+        GetComponent<Renderer>().material.SetColor("_EmissionColor", color * (hp * 0.15f));
+
+        //Let goo expand over time.
+        if (Expand == true)
+        {
+            StartCoroutine(ExpandGoo());
+        }
+
 
         //Death
         if (hp == 0)
@@ -76,6 +88,7 @@ public class MoveSnowbomb : MonoBehaviour
             }
 
             //Start death function.
+            gameObject.tag = "Untagged";
             StartCoroutine(Explode());
         }
     }
@@ -99,12 +112,21 @@ public class MoveSnowbomb : MonoBehaviour
         }
 
 
-        transform.Rotate(0, 0, 0);
-        transform.position = Vector3.MoveTowards(transform.position, closestPlayer.transform.position, speed);
+        //Chase players if they exist.
+        if (allPlayers.Length > 0)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, closestPlayer.transform.position, speed);
+        }
     }
 
-
-
+    //If not killed, will grow and get faster. Prevents player from ignoring enemies.
+    IEnumerator ExpandGoo()
+    {
+        Expand = false;
+        yield return new WaitForSeconds(3);
+        Expand = true;
+        speed *= 1.15f;
+    }
 
     //When bomb dies, explode!
     IEnumerator Explode()
@@ -162,18 +184,20 @@ public class MoveSnowbomb : MonoBehaviour
     //Take damage from objects.
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Player")
+        if (gameObject.tag == "Enemy")
         {
-            
-        }
-
-        if (col.gameObject.tag == "Bullet")
-        {
-            if (hp > 0)
+            if (col.gameObject.tag == "Player")
             {
-                hp -= 1;
+                hp = 5;
+            }
+
+            if (col.gameObject.tag == "Bullet")
+            {
+                if (hp > 0)
+                {
+                    hp -= 1;
+                }
             }
         }
-
     }
 }

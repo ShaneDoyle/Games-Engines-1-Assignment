@@ -12,9 +12,13 @@ public class TankMovement : MonoBehaviour
     public GameObject bulletSpawnPoint;
     public GameObject bulletPrefab;
 
+    //Built in Death Variables.
     private bool Death = false;
     private bool DeathLava = false;
     private bool DeathEnemy = false;
+    private float xDown = 0.005f;
+    private float yDown = 0.005f;
+    private float zDown = 0.005f;
 
     //Use this for initialization
     void Start ()
@@ -42,16 +46,29 @@ public class TankMovement : MonoBehaviour
         if(DeathLava == true)
         {
             transform.Translate(0, -0.015f, 0);
-            transform.Rotate(0, 7.5f, 0);
+            transform.Rotate(0, 10, 0);
         }
-        if (DeathEnemy == true)
+
+        else if (DeathEnemy == true)
         {
-
+            transform.localScale -= new Vector3(xDown, yDown, zDown);
+            transform.Rotate(0, 20, 0);
+            if (transform.localScale.x < 0)
+            {
+                yDown = 0;
+            }
+            if (transform.localScale.y < 0)
+            {
+                xDown = 0;
+            }
+            if (transform.localScale.z < 0)
+            {
+                zDown = 0;
+            }
         }
-
     }
 
-    //Called when touching lava.
+    //Called when touching lava
     IEnumerator KillPlayerByLava()
     {
         DeathLava = true;
@@ -59,11 +76,11 @@ public class TankMovement : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    //Called when touching enemy.
+    //Called when touching enemy
     IEnumerator KillPlayerByGoo()
     {
         DeathEnemy = true;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         gameObject.SetActive(false);
     }
 
