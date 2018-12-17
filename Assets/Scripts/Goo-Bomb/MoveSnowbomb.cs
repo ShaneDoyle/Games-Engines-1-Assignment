@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveSnowbomb : MonoBehaviour
 {
-
+    //Input Variables.
     public Transform target;
     public float hp = 5;
     public float speed;
@@ -16,7 +16,7 @@ public class MoveSnowbomb : MonoBehaviour
     Color color = Color.green;
     Renderer rend;
 
-    //Explosion Variables.
+    //Explosion/Death Variables.
     private float deathSphereSize = 0.2f;
     private int spheresInRow = 3;
     private GameObject deathsphere;

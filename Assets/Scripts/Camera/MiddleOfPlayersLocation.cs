@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class MiddleOfPlayersLocation : MonoBehaviour
 {
-    private float cameraLocation = 0;
+    private Vector3 test;
+    private float CameraLocation = 0;
+    private float PreviousCameraLocation = 0;
     private int NumOfPlayers = 0;
+
+    private float StartCamera = 1f;
+    private float StartCamera2 = 0.3f;
+
+    void Start()
+    {
+        transform.position = test;
+    }
 
     //Update is called once per frame
     void Update ()
@@ -14,12 +24,15 @@ public class MiddleOfPlayersLocation : MonoBehaviour
 
         foreach (Player currentPlayer in allPlayers)
         {
-            cameraLocation += currentPlayer.transform.position.x / allPlayers.Length ; //Hardcoded for 2 (50%) but can be changed for more players!
+            CameraLocation += currentPlayer.transform.position.x / allPlayers.Length ;
+            test = new Vector3(Mathf.Lerp(transform.position.x,CameraLocation,0.3f), 0, 0);
+            
         }
 
         //Set camera to position and reset to re-do coordinates.
-        transform.position = new Vector3(cameraLocation, 12, 9);
-        cameraLocation = 0;
+        transform.position = test;
+        PreviousCameraLocation = CameraLocation;
+        CameraLocation = 0;
         NumOfPlayers = 0;
     }
 }
