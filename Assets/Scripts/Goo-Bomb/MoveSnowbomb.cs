@@ -6,9 +6,8 @@ public class MoveSnowbomb : MonoBehaviour
 {
 
     public Transform target;
-    public float time = 10f;
-    public float hp = 3;
-    public float speed = 0.05f;
+    public float hp = 5;
+    public float speed;
     public AudioSource deathSound;
 
     Vector3 toTarget;
@@ -31,6 +30,7 @@ public class MoveSnowbomb : MonoBehaviour
     void Start()
     {
         myCollider = GetComponent<SphereCollider>();
+        speed *= 0.01f;
     }
 
 
@@ -40,10 +40,14 @@ public class MoveSnowbomb : MonoBehaviour
         if (hp != 0)
         { 
             FindClosestPlayer();
+            x += 8;
+        }
+        else
+        {
+            x += 3;
         }
 
         //Rolling Stuff
-        x += 8;
         if (x > 360.0f)
         {
             x = 0.0f;
@@ -51,7 +55,7 @@ public class MoveSnowbomb : MonoBehaviour
         transform.localRotation = Quaternion.Euler(0, x, 0);
 
         GetComponent<Renderer>().material.color = color;
-        GetComponent<Renderer>().material.SetColor("_EmissionColor", color * (hp * 0.2f));
+        GetComponent<Renderer>().material.SetColor("_EmissionColor", color * (hp * 0.10f));
 
         //Death
         if (hp == 0)
@@ -90,7 +94,7 @@ public class MoveSnowbomb : MonoBehaviour
 
 
         transform.Rotate(0, 0, 0);
-        transform.position = Vector3.MoveTowards(transform.position, closestPlayer.transform.position, 0.05f);
+        transform.position = Vector3.MoveTowards(transform.position, closestPlayer.transform.position, speed);
     }
 
 

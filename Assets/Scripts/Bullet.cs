@@ -5,11 +5,12 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 20;
-    public float gravity = 0.02f;
+    public float gravity = 0f;
     // Use this for initialization
     void Start()
     {
         Invoke("KillMe", 5);
+        gravity *= gravity;
     }
 
     void KillMe()
@@ -21,7 +22,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         gravity += 0.001f;
-        transform.Translate(0, -gravity, speed * Time.deltaTime);
+        transform.Translate(0, 0, speed * Time.deltaTime);
     }
 
     //Kill self if touching a player.

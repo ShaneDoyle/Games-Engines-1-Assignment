@@ -69,6 +69,7 @@
     <Compile Include="Assets\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\Camera\MiddleOfPlayersLocation.cs" />
+    <Compile Include="Assets\Scripts\Generation\Generation.cs" />
     <Compile Include="Assets\Scripts\Goo-Bomb\MoveSnowbomb.cs" />
     <Compile Include="Assets\Scripts\Goo-Bomb\RotateBall.cs" />
     <Compile Include="Assets\Scripts\Map\LandscapeGeneration.cs" />
