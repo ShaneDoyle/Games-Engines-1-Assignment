@@ -20,6 +20,9 @@ public class MoveSnowbomb : MonoBehaviour
     private float deathSphereSize = 0.2f;
     private int spheresInRow = 3;
     private GameObject deathsphere;
+    private float xDown = 0.03f;
+    private float yDown = 0.03f;
+    private float zDown = 0.03f;
 
     //Built in.
     private SphereCollider myCollider;
@@ -44,7 +47,7 @@ public class MoveSnowbomb : MonoBehaviour
         }
         else
         {
-            x += 3;
+            x += 4;
         }
 
         //Rolling Stuff
@@ -106,12 +109,25 @@ public class MoveSnowbomb : MonoBehaviour
     //When bomb dies, explode!
     IEnumerator Explode()
     {
+        yield return new WaitForSeconds(1);
+        transform.localScale -= new Vector3(xDown, 0, zDown);
+
+        if(transform.localScale.x < 0)
+        {
+            xDown = 0;
+        }
+        if (transform.localScale.z < 0)
+        {
+            zDown = 0;
+        }
+
         yield return new WaitForSeconds(3);
         GameObject.Destroy(this.gameObject);
 
 
-        /*
+        
         //Instantiate(explosioneffect, transform.position, transform.rotation);
+        /*
         gameObject.SetActive(false);
 
         for(int x = 0; x < spheresInRow; x++)
@@ -123,8 +139,8 @@ public class MoveSnowbomb : MonoBehaviour
                     createDeathEffect(x, y, z);
                 }
             }
-        }
-        */
+        }*/
+        
     }
 
     //Explode into pieces!
@@ -142,7 +158,8 @@ public class MoveSnowbomb : MonoBehaviour
         deathsphere.GetComponent<Rigidbody>().mass = 0.2f;
     }
 
-    //Kill self if touching a player.
+
+    //Take damage from objects.
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Player")
