@@ -6,10 +6,12 @@ public class Generation : MonoBehaviour
 {
     public int Wave = 1;
 
-    private static int EnemyLimit = 3;
+    private static int EnemyLimit = 2;
     public GameObject enemy;
 
-    public Transform test = GameObject.Find("Your_Name_Here").transform.position;
+
+
+    //public Transform test = GameObject.Find("Your_Name_Here").transform.position;
 
 
 
@@ -31,6 +33,6 @@ public class Generation : MonoBehaviour
 
     void SpawnEnemy()
     {
-        Instantiate(enemy, new Vector3(20, 1, Random.Range(15, 22)), Quaternion.identity);
+        Instantiate(enemy, new Vector3(GameObject.FindGameObjectWithTag("PlayerCamera").transform.position.x, 1, Random.Range(17, 22)), Quaternion.identity);
     }
 }

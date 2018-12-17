@@ -62,7 +62,7 @@ public class MoveSnowbomb : MonoBehaviour
         {
             if (DeathSoundPlayed == false)
             {
-                deathSound.Play(0);
+               // deathSound.Play();
                 DeathSoundPlayed = true;
             }
 
