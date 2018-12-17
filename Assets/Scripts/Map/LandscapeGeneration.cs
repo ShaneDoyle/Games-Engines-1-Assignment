@@ -41,6 +41,7 @@ public class LandscapeGeneration : MonoBehaviour
             for (int z = 1; z < 6; z++)
             {
                 Vector3 pos = new Vector3((x * planeSize + startPos.x), 0, (z * planeSize + startPos.z));
+                Vector3 pos2 = new Vector3((x * planeSize + startPos.x), 0.5f, (z * planeSize + startPos.z));
                 GameObject t;
                 //Make Middle
                 if (z != 2 || x < 0)
@@ -50,7 +51,7 @@ public class LandscapeGeneration : MonoBehaviour
                 else
                 {
                     t = (GameObject)Instantiate(lavaplane, pos, Quaternion.identity);
-                    t = (GameObject)Instantiate(plane, pos, Quaternion.identity);
+                    t = (GameObject)Instantiate(plane, pos2, Quaternion.identity);
                 }
 
 

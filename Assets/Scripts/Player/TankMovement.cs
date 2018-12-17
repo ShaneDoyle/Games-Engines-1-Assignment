@@ -32,4 +32,14 @@ public class TankMovement : MonoBehaviour
             bullet.transform.rotation = transform.rotation;
         }
     }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Lava")
+        {
+            Destroy(gameObject.GetComponent("BoxCollider"));
+            Destroy(gameObject.GetComponent("Rigidbody"));
+        }
+    }
+
 }

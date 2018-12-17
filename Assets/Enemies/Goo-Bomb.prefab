@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   hp: 5
-  speed: 3
+  speed: 5
   deathSound: {fileID: 82209119789966756, guid: 5c0a4ceb22e96194d887a75769cc40c8,
     type: 2}
 --- !u!135 &135197635285635758

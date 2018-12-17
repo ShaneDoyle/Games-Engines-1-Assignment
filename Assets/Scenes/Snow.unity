@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 141822632}
   - component: {fileID: 141822633}
   - component: {fileID: 141822634}
+  - component: {fileID: 141822635}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -166,7 +167,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 141822630}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2, y: 1, z: 21}
+  m_LocalPosition: {x: -2, y: 3, z: 21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1794348757}
@@ -207,7 +208,7 @@ MonoBehaviour:
   cameraDistance: 12
   rotationSpeed: 270
   bulletSpawnPoint: {fileID: 2090496786}
-  bulletPrefab: {fileID: 1992639059231566, guid: 17e3f4d8c36a1aa4996704c5e973c831,
+  bulletPrefab: {fileID: 1510185311839130, guid: c67051e8c61b89d46949b8629b08fa99,
     type: 2}
 --- !u!114 &141822634
 MonoBehaviour:
@@ -220,6 +221,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606d780b15ac83a48bf18d1d5e888b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &141822635
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 141822630}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.75, y: 1, z: 0.75}
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!1 &186915848
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,7 +669,7 @@ BoxCollider:
   m_GameObject: {fileID: 576216095}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -795,7 +808,7 @@ BoxCollider:
   m_GameObject: {fileID: 793281737}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1083,7 +1096,7 @@ BoxCollider:
   m_GameObject: {fileID: 997480142}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -6536,7 +6549,7 @@ BoxCollider:
   m_GameObject: {fileID: 1588467295}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -7010,7 +7023,7 @@ SphereCollider:
   m_GameObject: {fileID: 1905324649}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -7407,7 +7420,7 @@ SphereCollider:
   m_GameObject: {fileID: 2067064982}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -7503,6 +7516,7 @@ GameObject:
   - component: {fileID: 2144757802}
   - component: {fileID: 2144757801}
   - component: {fileID: 2144757804}
+  - component: {fileID: 2144757805}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Player
@@ -7525,7 +7539,7 @@ MonoBehaviour:
   cameraDistance: 12
   rotationSpeed: 270
   bulletSpawnPoint: {fileID: 139467985}
-  bulletPrefab: {fileID: 1992639059231566, guid: 17e3f4d8c36a1aa4996704c5e973c831,
+  bulletPrefab: {fileID: 1293395972091638, guid: 99951840db332764d89eaba8432a6d08,
     type: 2}
 --- !u!54 &2144757802
 Rigidbody:
@@ -7549,7 +7563,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2144757800}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2, y: 1, z: 19}
+  m_LocalPosition: {x: -2, y: 3, z: 19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1028346716}
@@ -7571,3 +7585,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606d780b15ac83a48bf18d1d5e888b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2144757805
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2144757800}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.2, z: 0}

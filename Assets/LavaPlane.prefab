@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114947708954640580}
   m_Layer: 0
   m_Name: LavaPlane
-  m_TagString: Untagged
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
