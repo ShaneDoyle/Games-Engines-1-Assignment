@@ -21,7 +21,7 @@ public class Generation : MonoBehaviour
     //Use this for initialization
     void Start ()
     {
-        
+        EnemyLimit++; //Compensate for the original object!
     }
 
 	

@@ -8,7 +8,7 @@ public class MoveSnowbomb : MonoBehaviour
     public Transform target;
     public float hp = 5;
     private float maxhp;
-    public float speed;
+    private float speed = 4;
     public AudioSource deathSound;
 
 
@@ -63,7 +63,7 @@ public class MoveSnowbomb : MonoBehaviour
         transform.localRotation = Quaternion.Euler(0, x, 0);
 
         GetComponent<Renderer>().material.color = color;
-        GetComponent<Renderer>().material.SetColor("_EmissionColor", color * (hp * 0.15f));
+        GetComponent<Renderer>().material.SetColor("_EmissionColor", color * (hp * 0.075f));
 
         //Let goo expand over time.
         if (Expand == true)
@@ -77,7 +77,7 @@ public class MoveSnowbomb : MonoBehaviour
         {
             if (DeathSoundPlayed == false)
             {
-               // deathSound.Play();
+                deathSound.Play();
                 DeathSoundPlayed = true;
             }
 
