@@ -572,6 +572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Wave: 1
+  SpawnTime: 2
   enemy: {fileID: 0}
 --- !u!114 &527234664
 MonoBehaviour:
@@ -1012,6 +1013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Wave: 1
+  SpawnTime: 2
   enemy: {fileID: 1685672449687592, guid: fbed929fff3110d4b982764f2000d67f, type: 2}
 --- !u!1 &997480142
 GameObject:
@@ -7478,7 +7480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2144757801
 MonoBehaviour:
   m_ObjectHideFlags: 0

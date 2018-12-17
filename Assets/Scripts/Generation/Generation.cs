@@ -5,8 +5,11 @@ using UnityEngine;
 public class Generation : MonoBehaviour
 {
     public int Wave = 1;
+    public int SpawnTime = 2;
 
+    private bool StopSpawn = false;
     private static int EnemyLimit = 2;
+    private float PlayerXPos;
     public GameObject enemy;
 
 
@@ -18,21 +21,26 @@ public class Generation : MonoBehaviour
     //Use this for initialization
     void Start ()
     {
-        Instantiate(enemy, new Vector3(20, 1, Random.Range(15, 22)), Quaternion.identity);
+        
     }
+
 	
 	//Update is called once per frame
 	void Update ()
     {
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length < EnemyLimit)
-        {
-            SpawnEnemy();
-        }
+        PlayerXPos = GameObject.FindGameObjectWithTag("PlayerCamera").transform.position.x;
+        StartCoroutine(SpawnEnemy());
     }
 
-
-    void SpawnEnemy()
+    IEnumerator SpawnEnemy()
     {
-        Instantiate(enemy, new Vector3(GameObject.FindGameObjectWithTag("PlayerCamera").transform.position.x, 1, Random.Range(17, 22)), Quaternion.identity);
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length < EnemyLimit && StopSpawn == false)
+        {
+            StopSpawn = true;
+            float xDistance = Random.Range(20, 40);
+            Instantiate(enemy, new Vector3(PlayerXPos + xDistance, 1, Random.Range(16, 22)), Quaternion.identity);
+            yield return new WaitForSeconds(SpawnTime);
+            StopSpawn = false;
+        }
     }
 }

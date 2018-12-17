@@ -71,6 +71,9 @@ public class MoveSnowbomb : MonoBehaviour
                 transform.localScale -= new Vector3(-0.05f, 0.10f, -0.05f);
                 myCollider.radius -= 0.03f;
             }
+
+            //Start death function.
+            StartCoroutine(Explode());
         }
     }
 
@@ -98,11 +101,16 @@ public class MoveSnowbomb : MonoBehaviour
     }
 
 
-    
+
 
     //When bomb dies, explode!
-    void Explode()
+    IEnumerator Explode()
     {
+        yield return new WaitForSeconds(3);
+        GameObject.Destroy(this.gameObject);
+
+
+        /*
         //Instantiate(explosioneffect, transform.position, transform.rotation);
         gameObject.SetActive(false);
 
@@ -115,8 +123,8 @@ public class MoveSnowbomb : MonoBehaviour
                     createDeathEffect(x, y, z);
                 }
             }
-
         }
+        */
     }
 
     //Explode into pieces!
