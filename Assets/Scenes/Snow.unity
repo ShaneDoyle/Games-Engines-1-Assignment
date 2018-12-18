@@ -6735,6 +6735,11 @@ MonoBehaviour:
     volume: 0.35
     pitch: 0.85
     source: {fileID: 0}
+  - name: Player Death
+    clip: {fileID: 8300000, guid: c43d845e2baca934da0a77d3e603d57a, type: 3}
+    volume: 1
+    pitch: 0.8
+    source: {fileID: 0}
 --- !u!4 &1568842578
 Transform:
   m_ObjectHideFlags: 0
@@ -7883,7 +7888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2144757801
 MonoBehaviour:
   m_ObjectHideFlags: 0

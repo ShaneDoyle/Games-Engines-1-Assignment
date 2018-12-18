@@ -16,9 +16,9 @@ public class TankMovement : MonoBehaviour
     private bool Death = false;
     private bool DeathLava = false;
     private bool DeathEnemy = false;
-    private float xDown = 0.005f;
-    private float yDown = 0.005f;
-    private float zDown = 0.005f;
+    private float xDown = 0.01f;
+    private float yDown = 0.01f;
+    private float zDown = 0.01f;
 
     //Use this for initialization
     void Start ()
@@ -45,8 +45,8 @@ public class TankMovement : MonoBehaviour
 
         if(DeathLava == true)
         {
-            transform.Translate(0, -0.015f, 0);
-            transform.Rotate(0, 10, 0);
+            transform.Translate(0, -0.020f, 0);
+            transform.Rotate(0, 15, 0);
         }
 
         else if (DeathEnemy == true)
@@ -72,7 +72,8 @@ public class TankMovement : MonoBehaviour
     IEnumerator KillPlayerByLava()
     {
         DeathLava = true;
-        yield return new WaitForSeconds(2);
+        FindObjectOfType<AudioManager>().Play("Player Death");
+        yield return new WaitForSeconds(1.5f);
         gameObject.SetActive(false);
     }
 
@@ -80,7 +81,8 @@ public class TankMovement : MonoBehaviour
     IEnumerator KillPlayerByGoo()
     {
         DeathEnemy = true;
-        yield return new WaitForSeconds(1);
+        FindObjectOfType<AudioManager>().Play("Player Death");
+        yield return new WaitForSeconds(1.5f);
         gameObject.SetActive(false);
     }
 
