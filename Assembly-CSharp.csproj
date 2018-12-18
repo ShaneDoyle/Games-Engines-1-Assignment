@@ -66,6 +66,7 @@
     <Compile Include="Assets\CopyRotation.cs" />
     <Compile Include="Assets\GlobalVariables.cs" />
     <Compile Include="Assets\Lerp.cs" />
+    <Compile Include="Assets\NextWave.cs" />
     <Compile Include="Assets\Player.cs" />
     <Compile Include="Assets\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />

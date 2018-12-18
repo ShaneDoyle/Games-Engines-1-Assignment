@@ -14,6 +14,8 @@ class Tile
     }
 }
 
+
+
 public class LandscapeGeneration : MonoBehaviour
 {
     public GameObject startingplane;
@@ -27,14 +29,21 @@ public class LandscapeGeneration : MonoBehaviour
     int halfTilesX = 5;
     int halfTilesZ = 5;
 
-    int MapLength = 10;
+    int MapLength;
 
     Vector3 startPos;
 
     Hashtable tiles = new Hashtable();
 
-	//Use this for initialization
-	void Start ()
+
+    void Awake()
+    {
+        GameObject go = GameObject.Find("Global Variables");
+        MapLength = go.GetComponent<GlobalVariables>().MapLength;
+    }
+
+    //Use this for initialization
+    void Start ()
     {
         this.gameObject.transform.position = Vector3.zero;
         startPos = Vector3.zero;

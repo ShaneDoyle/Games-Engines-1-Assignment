@@ -5,13 +5,17 @@ using UnityEngine;
 public class MapGeneration : MonoBehaviour
 {
 
-    // Use this for initialization
-    int heightScale = 1;
-    float detailScale = 1f;
+    //Land Variables.
+    int heightScale;
+    float detailScale;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
+        GameObject go = GameObject.Find("Global Variables");
+        heightScale = go.GetComponent<GlobalVariables>().heightScale;
+        detailScale = go.GetComponent<GlobalVariables>().detailScale;
+
         Mesh mesh = this.GetComponent<MeshFilter>().mesh;
         Vector3[] vertices = mesh.vertices;
         for (int v = 0; v < vertices.Length; v++)

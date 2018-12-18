@@ -6,8 +6,14 @@ using UnityEngine;
 public class GlobalVariables : MonoBehaviour
 {
     //Global Variables
-    public int Wave = 1;
+
+    //Gamemode stuff.
+    public int Wave;
     public int EnemyLimit;
+
+    //Land Stuff
     public int MapLength = 10;
-    public int MapLengthExpander = 0;
+    public int MapLengthExpander = 1;
+    public int heightScale = 5;
+    public float detailScale = 1f;
 }
