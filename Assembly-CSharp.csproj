@@ -65,6 +65,7 @@
     <Compile Include="Assets\CameraOnPlayers.cs" />
     <Compile Include="Assets\CopyRotation.cs" />
     <Compile Include="Assets\Lerp.cs" />
+    <Compile Include="Assets\MoveStartingPlane.cs" />
     <Compile Include="Assets\Player.cs" />
     <Compile Include="Assets\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />

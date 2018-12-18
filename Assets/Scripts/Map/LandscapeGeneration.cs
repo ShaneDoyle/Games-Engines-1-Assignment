@@ -43,28 +43,29 @@ public class LandscapeGeneration : MonoBehaviour
         {
             for (int z = 1; z < 6; z++)
             {
-                Vector3 pos = new Vector3((x * planeSize + startPos.x), 0, (z * planeSize + startPos.z));
-                Vector3 pos2 = new Vector3((x * planeSize + startPos.x), 0.5f, (z * planeSize + startPos.z));
+                Vector3 lavapos = new Vector3((x * planeSize + startPos.x), 0, (z * planeSize + startPos.z));
+                Vector3 planepos = new Vector3((x * planeSize + startPos.x), 0.5f, (z * planeSize + startPos.z));
+                Vector3 startingplanepos = new Vector3((x * planeSize + startPos.x), 0.5f, (z * planeSize + startPos.z));
                 GameObject t;
 
                 //Make Middle
                 if (x == 0 && z == 2)
                 {
-                    t = (GameObject)Instantiate(lavaplane, pos, Quaternion.identity);
-                    t = (GameObject)Instantiate(startingplane, pos2, Quaternion.identity);
+                    t = (GameObject)Instantiate(lavaplane, lavapos, Quaternion.identity);
+                    t = (GameObject)Instantiate(startingplane, startingplanepos, Quaternion.identity);
                 }
                 else if (z != 2 || x < 0 || x >= MapLength)
                 { 
-                    t = (GameObject)Instantiate(lavaplane, pos, Quaternion.identity);
+                    t = (GameObject)Instantiate(lavaplane, lavapos, Quaternion.identity);
                 }
                 else
                 {
-                    t = (GameObject)Instantiate(lavaplane, pos, Quaternion.identity);
-                    t = (GameObject)Instantiate(plane, pos2, Quaternion.identity);
+                    t = (GameObject)Instantiate(lavaplane, lavapos, Quaternion.identity);
+                    t = (GameObject)Instantiate(plane, planepos, Quaternion.identity);
                 }
 
 
-                string tilename = "Tile_" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
+                string tilename = "Tile_" + ((int)(planepos.x)).ToString() + "_" + ((int)(planepos.z)).ToString();
                 t.name = tilename;
                 Tile tile = new Tile(t, updateTime);
                 tiles.Add(tilename, tile);
