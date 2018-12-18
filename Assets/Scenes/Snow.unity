@@ -1214,6 +1214,8 @@ MonoBehaviour:
   startingplane: {fileID: 1047677326947188, guid: 664ce5cf362a3044fa0edf76f2d1e060,
     type: 2}
   plane: {fileID: 1917424108535776, guid: adff8cd4195e9d24599ebac97e713f64, type: 2}
+  endingplane: {fileID: 1656635685139002, guid: f08b4c6660027ba4d9061e66cc09d457,
+    type: 2}
   lavaplane: {fileID: 1494232289707926, guid: 14efefa7819ce2c468de18b0009c97ac, type: 2}
   player: {fileID: 953507764}
 --- !u!4 &980271872

@@ -8,7 +8,7 @@ public class TileTexture : MonoBehaviour
     Color color = Color.green;
     Renderer rend;
 
-    float brightness = 0f;
+    float brightness = -0.20f;
     public float scrollSpeed = 1f;
     public float brightnessSpeed = 2.5f;
     private int reverse = -1;
@@ -26,7 +26,7 @@ public class TileTexture : MonoBehaviour
     {
         //Go from up to down.
         brightness += brightnessSpeed * reverse;
-        if(brightness >= 0.15f || brightness  <= -0.35f)
+        if(brightness >= 0.05f || brightness  <= -0.40f)
         {
             reverse *= -1;
         }

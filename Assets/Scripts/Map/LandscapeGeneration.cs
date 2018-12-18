@@ -18,6 +18,7 @@ public class LandscapeGeneration : MonoBehaviour
 {
     public GameObject startingplane;
     public GameObject plane;
+    public GameObject endingplane;
     public GameObject lavaplane;
     public GameObject player;
 
@@ -48,16 +49,24 @@ public class LandscapeGeneration : MonoBehaviour
                 Vector3 startingplanepos = new Vector3((x * planeSize + startPos.x), 0.5f, (z * planeSize + startPos.z));
                 GameObject t;
 
-                //Make Middle
+                //Starting Plane.
                 if (x == 0 && z == 2)
                 {
                     t = (GameObject)Instantiate(lavaplane, lavapos, Quaternion.identity);
                     t = (GameObject)Instantiate(startingplane, startingplanepos, Quaternion.identity);
                 }
+                //Ending Plane.
+                else if (x == MapLength && z == 2)
+                {
+                    t = (GameObject)Instantiate(lavaplane, lavapos, Quaternion.identity);
+                    t = (GameObject)Instantiate(endingplane, planepos, Quaternion.identity);
+                }
+                //Lava Planes.
                 else if (z != 2 || x < 0 || x >= MapLength)
                 { 
                     t = (GameObject)Instantiate(lavaplane, lavapos, Quaternion.identity);
                 }
+                //Planes.
                 else
                 {
                     t = (GameObject)Instantiate(lavaplane, lavapos, Quaternion.identity);
