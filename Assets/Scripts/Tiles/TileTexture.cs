@@ -26,7 +26,7 @@ public class TileTexture : MonoBehaviour
     {
         //Go from up to down.
         brightness += brightnessSpeed * reverse;
-        if(brightness >= 0.25f || brightness  <= -0.20f)
+        if(brightness >= 0.15f || brightness  <= -0.35f)
         {
             reverse *= -1;
         }

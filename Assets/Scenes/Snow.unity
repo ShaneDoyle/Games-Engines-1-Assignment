@@ -6720,10 +6720,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Enemy Death
+  - name: Goo Death
     clip: {fileID: 8300000, guid: 981c17888595b844984cbbb73ddbb373, type: 3}
-    volume: 0.487
-    pitch: 1
+    volume: 1
+    pitch: 0.85
+    source: {fileID: 0}
+  - name: Goo Hit
+    clip: {fileID: 8300000, guid: f6f3bbe7e558d4e4e954381ee16151d5, type: 3}
+    volume: 1
+    pitch: 0.85
+    source: {fileID: 0}
+  - name: Player Shoot
+    clip: {fileID: 8300000, guid: a5cea0a2b8a003449ada85bf1d2531b3, type: 3}
+    volume: 0.35
+    pitch: 0.85
     source: {fileID: 0}
 --- !u!4 &1568842578
 Transform:
@@ -7873,7 +7883,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2144757801
 MonoBehaviour:
   m_ObjectHideFlags: 0

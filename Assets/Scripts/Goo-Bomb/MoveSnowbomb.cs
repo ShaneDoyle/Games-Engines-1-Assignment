@@ -77,7 +77,8 @@ public class MoveSnowbomb : MonoBehaviour
         {
             if (DeathSoundPlayed == false)
             {
-                deathSound.Play();
+                // deathSound.Play();
+                FindObjectOfType<AudioManager>().Play("Goo Death");
                 DeathSoundPlayed = true;
             }
 
@@ -193,9 +194,16 @@ public class MoveSnowbomb : MonoBehaviour
 
             if (col.gameObject.tag == "Bullet")
             {
+                //Lose HP when hit.
                 if (hp > 0)
                 {
                     hp -= 1;
+                }
+
+                //Play hit sound when hit but not when death sound will play.
+                if (hp >= 1)
+                {
+                    FindObjectOfType<AudioManager>().Play("Goo Hit");
                 }
             }
         }
