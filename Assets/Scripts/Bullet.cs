@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 20;
     public float gravity = 0f;
+
     // Use this for initialization
     void Start()
     {

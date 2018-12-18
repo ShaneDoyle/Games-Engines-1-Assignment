@@ -64,6 +64,7 @@
     <Compile Include="Assets\CameraController.cs" />
     <Compile Include="Assets\CameraOnPlayers.cs" />
     <Compile Include="Assets\CopyRotation.cs" />
+    <Compile Include="Assets\GlobalVariables.cs" />
     <Compile Include="Assets\Lerp.cs" />
     <Compile Include="Assets\Player.cs" />
     <Compile Include="Assets\PlayerController.cs" />

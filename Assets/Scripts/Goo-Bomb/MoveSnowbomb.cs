@@ -6,9 +6,9 @@ public class MoveSnowbomb : MonoBehaviour
 {
     //Input Variables.
     public Transform target;
-    public float hp = 5;
+    public float hp = 3;
     private float maxhp;
-    private float speed = 4;
+    public float speed = 3;
     public AudioSource deathSound;
 
 
@@ -65,12 +65,6 @@ public class MoveSnowbomb : MonoBehaviour
         GetComponent<Renderer>().material.color = color;
         GetComponent<Renderer>().material.SetColor("_EmissionColor", color * (hp * 0.075f));
 
-        //Let goo expand over time.
-        if (Expand == true)
-        {
-            StartCoroutine(ExpandGoo());
-        }
-
 
         //Death
         if (hp == 0)
@@ -101,13 +95,16 @@ public class MoveSnowbomb : MonoBehaviour
         float distancetoClosestPlayer = Mathf.Infinity;
         Player closestPlayer = null;
         Player[] allPlayers = GameObject.FindObjectsOfType<Player>();
+        float closestPlayerX = 0;
 
         foreach(Player currentPlayer in allPlayers)
         {
+            
             float distancetoPlayer = (currentPlayer.transform.position - this.transform.position).sqrMagnitude;
             if(distancetoPlayer < distancetoClosestPlayer)
             {
                 distancetoClosestPlayer = distancetoPlayer;
+                closestPlayerX = currentPlayer.transform.position.x;
                 closestPlayer = currentPlayer;
             }
         }
@@ -118,15 +115,29 @@ public class MoveSnowbomb : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, closestPlayer.transform.position, speed);
         }
+
+        //Let goo expand over time.
+        if (Expand == true)
+        {
+            //Speed up goo ball over time.
+            if (transform.position.x - closestPlayerX < 0)
+            {
+               StartCoroutine(ExpandGoo(3));
+            }
+        }
     }
 
     //If not killed, will grow and get faster. Prevents player from ignoring enemies.
-    IEnumerator ExpandGoo()
+    IEnumerator ExpandGoo(float waittime)
     {
         Expand = false;
-        yield return new WaitForSeconds(3);
+        //yield return new WaitForSeconds(waittime);
         Expand = true;
-        speed *= 1.15f;
+        if (speed < 0.2f)
+        {
+            speed *= 1.01f;
+        }
+        yield return null;
     }
 
     //When bomb dies, explode!

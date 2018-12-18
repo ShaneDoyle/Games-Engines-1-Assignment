@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class Generation : MonoBehaviour
 {
-    public int Wave = 1;
     public int SpawnTime = 2;
+    
 
+    
     private bool StopSpawn = false;
-    private static int EnemyLimit = 2;
     private float PlayerXPos;
     public GameObject enemy;
 
 
+    //Gamemode Control
+    private int Wave;
+    private int EnemyLimit = 1;
 
     //public Transform test = GameObject.Find("Your_Name_Here").transform.position;
 
 
 
     //Use this for initialization
-    void Start ()
+    void Awake ()
     {
-        EnemyLimit++; //Compensate for the original object!
+        //EnemyLimit++; //Compensate for the original object!
+        GameObject go = GameObject.Find("Global Variables");
+        Wave = go.GetComponent<GlobalVariables>().Wave;
+        EnemyLimit = go.GetComponent<GlobalVariables>().EnemyLimit;
     }
 
 	
@@ -43,4 +49,9 @@ public class Generation : MonoBehaviour
             StopSpawn = false;
         }
     }
+}
+
+public class GamemodeManagement
+{
+    public int Wave = 1;
 }
