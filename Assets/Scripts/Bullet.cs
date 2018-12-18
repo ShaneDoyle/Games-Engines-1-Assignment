@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
     public float speed = 20;
     public float gravity = 0f;
+    private AudioSource HitSound;
     // Use this for initialization
     void Start()
     {
         Invoke("KillMe", 1);
         gravity *= gravity;
+        HitSound = GetComponent<AudioSource>();
     }
 
     void KillMe()
@@ -30,7 +33,8 @@ public class Bullet : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy")
         {
-            Destroy(gameObject);
+            //HitSound.Play();
+             Destroy(gameObject);
         }
     }
 }
