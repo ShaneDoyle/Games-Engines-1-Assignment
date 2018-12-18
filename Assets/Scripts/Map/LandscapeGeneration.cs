@@ -16,6 +16,7 @@ class Tile
 
 public class LandscapeGeneration : MonoBehaviour
 {
+    public GameObject startingplane;
     public GameObject plane;
     public GameObject lavaplane;
     public GameObject player;
@@ -23,6 +24,8 @@ public class LandscapeGeneration : MonoBehaviour
     int planeSize = 10;
     int halfTilesX = 5;
     int halfTilesZ = 5;
+
+    int MapLength = 10;
 
     Vector3 startPos;
 
@@ -36,15 +39,21 @@ public class LandscapeGeneration : MonoBehaviour
 
         float updateTime = Time.realtimeSinceStartup;
 
-        for(int x = -5; x < 10; x++)
+        for(int x = -5; x < MapLength + 5; x++)
         {
             for (int z = 1; z < 6; z++)
             {
                 Vector3 pos = new Vector3((x * planeSize + startPos.x), 0, (z * planeSize + startPos.z));
                 Vector3 pos2 = new Vector3((x * planeSize + startPos.x), 0.5f, (z * planeSize + startPos.z));
                 GameObject t;
+
                 //Make Middle
-                if (z != 2 || x < 0)
+                if (x == 0 && z == 2)
+                {
+                    t = (GameObject)Instantiate(lavaplane, pos, Quaternion.identity);
+                    t = (GameObject)Instantiate(startingplane, pos2, Quaternion.identity);
+                }
+                else if (z != 2 || x < 0 || x >= MapLength)
                 { 
                     t = (GameObject)Instantiate(lavaplane, pos, Quaternion.identity);
                 }

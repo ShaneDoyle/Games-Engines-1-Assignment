@@ -1211,6 +1211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a19fefce77de50498d4a8dfda368055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingplane: {fileID: 1047677326947188, guid: 664ce5cf362a3044fa0edf76f2d1e060,
+    type: 2}
   plane: {fileID: 1917424108535776, guid: adff8cd4195e9d24599ebac97e713f64, type: 2}
   lavaplane: {fileID: 1494232289707926, guid: 14efefa7819ce2c468de18b0009c97ac, type: 2}
   player: {fileID: 953507764}
