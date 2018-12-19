@@ -12,6 +12,7 @@ public class TankMovement : MonoBehaviour
     [Header("Bullet Settings")]
     public GameObject BulletSpawnPoint;
     public GameObject BulletPrefab;
+    public float ReloadTime;
 
     //Built in Death Variables.
     private bool Death = false;
@@ -61,7 +62,7 @@ public class TankMovement : MonoBehaviour
         GameObject bullet = GameObject.Instantiate<GameObject>(BulletPrefab);
         bullet.transform.position = BulletSpawnPoint.transform.position;
         bullet.transform.rotation = transform.rotation;
-        yield return new WaitForSeconds(0.33f);
+        yield return new WaitForSeconds(ReloadTime);
         CanShoot = true;
     }
 

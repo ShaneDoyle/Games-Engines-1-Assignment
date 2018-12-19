@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
     //Initialisation.
     void Start()
     {
-        Invoke("KillMe", 1);
+        Invoke("KillMe", 0.7f);
         FindObjectOfType<AudioManager>().Play("Player Shoot");
     }
 

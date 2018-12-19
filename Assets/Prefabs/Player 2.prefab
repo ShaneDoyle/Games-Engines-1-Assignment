@@ -495,6 +495,7 @@ MonoBehaviour:
   BulletSpawnPoint: {fileID: 1311066361445672}
   BulletPrefab: {fileID: 1293395972091638, guid: 99951840db332764d89eaba8432a6d08,
     type: 2}
+  ReloadTime: 0.3
 --- !u!114 &114469688381556204
 MonoBehaviour:
   m_ObjectHideFlags: 1
