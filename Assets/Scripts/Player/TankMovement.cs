@@ -23,6 +23,7 @@ public class TankMovement : MonoBehaviour
 
     //More Built in components.
     private bool CanMove = false;
+    private bool CanShoot = true;
     Rigidbody RB;
 
     //Pause before spawning.
@@ -53,6 +54,17 @@ public class TankMovement : MonoBehaviour
         CanMove = true;
     }
 
+    //Appear after initial delay.
+    IEnumerator Shoot()
+    {
+        CanShoot = false;
+        GameObject bullet = GameObject.Instantiate<GameObject>(bulletPrefab);
+        bullet.transform.position = bulletSpawnPoint.transform.position;
+        bullet.transform.rotation = transform.rotation;
+        yield return new WaitForSeconds(0.5f);
+        CanShoot = true;
+    }
+
     //Update is called once per frame.
     void Update()
     {
@@ -60,7 +72,6 @@ public class TankMovement : MonoBehaviour
         if (Input.GetKey("escape"))
         { 
             Application.Quit();
-            UnityEditor.EditorApplication.isPlaying = false;
         }
 
 
@@ -73,11 +84,9 @@ public class TankMovement : MonoBehaviour
                 transform.Translate(Input.GetAxis("Horizontal (P1 Stick)") * moveSpeed * Time.deltaTime, 0, 0, Space.World);
                 transform.Rotate(0, Input.GetAxis("Rotate (P1)") * rotationSpeed * Time.deltaTime, 0);
 
-                if (Input.GetButtonDown("Shoot (P1)"))
+                if (Input.GetButtonDown("Shoot (P1)") && CanShoot == true)
                 {
-                    GameObject bullet = GameObject.Instantiate<GameObject>(bulletPrefab);
-                    bullet.transform.position = bulletSpawnPoint.transform.position;
-                    bullet.transform.rotation = transform.rotation;
+                    StartCoroutine(Shoot());
                 }
             }
             else if (this.name.Contains("Player 2"))
@@ -86,11 +95,9 @@ public class TankMovement : MonoBehaviour
                 transform.Translate(Input.GetAxis("Horizontal (P2 Stick)") * moveSpeed * Time.deltaTime, 0, 0, Space.World);
                 transform.Rotate(0, Input.GetAxis("Rotate (P2)") * rotationSpeed * Time.deltaTime, 0);
 
-                if (Input.GetButtonDown("Shoot (P2)"))
+                if (Input.GetButtonDown("Shoot (P2)") && CanShoot == true)
                 {
-                    GameObject bullet = GameObject.Instantiate<GameObject>(bulletPrefab);
-                    bullet.transform.position = bulletSpawnPoint.transform.position;
-                    bullet.transform.rotation = transform.rotation;
+                    StartCoroutine(Shoot());
                 }
             }
         }
