@@ -146,13 +146,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Wave: 1
-  MapLength: 8
+  MapLength: 1
   MapLengthExpander: 1
-  heightScale: 2
-  detailScale: 10
+  heightScale: 1
+  detailScale: 1
   EnemyLimit: 3
-  EnemyStartSpeed: 0
-  EnemySpeedIncrease: 0
+  EnemySpeed: 3
+  EnemySpeedIncrease: 3
 --- !u!4 &192761637
 Transform:
   m_ObjectHideFlags: 0

@@ -64,6 +64,12 @@ public class TankMovement : MonoBehaviour
             }
         }
 
+        //Used to reset wave.
+        if(transform.position.y < -50)
+        {
+            Destroy(gameObject);
+        }
+
         //If death by lava.
         if(DeathLava == true)
         {

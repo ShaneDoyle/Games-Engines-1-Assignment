@@ -8,7 +8,7 @@ public class MoveSnowbomb : MonoBehaviour
     public Transform target;
     public float hp = 3;
     private float maxhp;
-    public float speed = 3;
+    private float speed;
     public AudioSource deathSound;
 
 
@@ -35,10 +35,11 @@ public class MoveSnowbomb : MonoBehaviour
     //Use this for initialization
     void Start()
     {
+        GameObject go = GameObject.Find("Global Variables");
+        speed = go.GetComponent<GlobalVariables>().EnemySpeed;
         myCollider = GetComponent<SphereCollider>();
         maxhp = hp;
         speed *= 0.01f;
-
     }
 
 
@@ -200,7 +201,7 @@ public class MoveSnowbomb : MonoBehaviour
         {
             if (col.gameObject.tag == "Player")
             {
-                hp = 5;
+                hp = maxhp;
             }
 
             if (col.gameObject.tag == "Bullet")

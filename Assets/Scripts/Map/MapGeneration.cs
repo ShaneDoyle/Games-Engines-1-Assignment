@@ -9,6 +9,7 @@ public class MapGeneration : MonoBehaviour
     int heightScale;
     float detailScale;
 
+
     // Use this for initialization
     void Awake()
     {

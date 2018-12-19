@@ -18,6 +18,6 @@ public class GlobalVariables : MonoBehaviour
 
     //Enemy Stuff
     public int EnemyLimit;
-    public int EnemyStartSpeed;
+    public int EnemySpeed;
     public int EnemySpeedIncrease;
 }
