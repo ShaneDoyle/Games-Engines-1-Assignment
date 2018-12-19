@@ -327,7 +327,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5cd4cf0773f3a7a499ac0f0c0d823b89, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.85
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -577,9 +577,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Goo Death
-    clip: {fileID: 8300000, guid: 981c17888595b844984cbbb73ddbb373, type: 3}
+    clip: {fileID: 8300000, guid: 643c2b229d200e643924b10c47383501, type: 3}
     volume: 1
-    pitch: 0.85
+    pitch: 0.6
     source: {fileID: 0}
   - name: Goo Hit
     clip: {fileID: 8300000, guid: f6f3bbe7e558d4e4e954381ee16151d5, type: 3}
@@ -588,7 +588,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Player Shoot
     clip: {fileID: 8300000, guid: a5cea0a2b8a003449ada85bf1d2531b3, type: 3}
-    volume: 0.35
+    volume: 0.6
     pitch: 0.85
     source: {fileID: 0}
   - name: Player Death
@@ -598,8 +598,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Pop
     clip: {fileID: 8300000, guid: 6d03abfda4e2eed46b41dc297ca4c4e1, type: 3}
-    volume: 1
-    pitch: 1.15
+    volume: 0.5
+    pitch: 0.8
     source: {fileID: 0}
   - name: Wave Complete
     clip: {fileID: 8300000, guid: 3e01e4bd74e23f2458fae419c3ec631f, type: 3}
@@ -649,9 +649,9 @@ RectTransform:
   m_Father: {fileID: 200438172}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -580, y: 260}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 82, y: -19}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1639626882

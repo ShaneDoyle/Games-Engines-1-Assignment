@@ -61,7 +61,7 @@ public class TankMovement : MonoBehaviour
         GameObject bullet = GameObject.Instantiate<GameObject>(bulletPrefab);
         bullet.transform.position = bulletSpawnPoint.transform.position;
         bullet.transform.rotation = transform.rotation;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.33f);
         CanShoot = true;
     }
 
@@ -84,7 +84,7 @@ public class TankMovement : MonoBehaviour
                 transform.Translate(Input.GetAxis("Horizontal (P1 Stick)") * moveSpeed * Time.deltaTime, 0, 0, Space.World);
                 transform.Rotate(0, Input.GetAxis("Rotate (P1)") * rotationSpeed * Time.deltaTime, 0);
 
-                if (Input.GetButtonDown("Shoot (P1)") && CanShoot == true)
+                if (Input.GetAxisRaw("Shoot (P1)") != 0 && CanShoot == true)
                 {
                     StartCoroutine(Shoot());
                 }
@@ -95,7 +95,7 @@ public class TankMovement : MonoBehaviour
                 transform.Translate(Input.GetAxis("Horizontal (P2 Stick)") * moveSpeed * Time.deltaTime, 0, 0, Space.World);
                 transform.Rotate(0, Input.GetAxis("Rotate (P2)") * rotationSpeed * Time.deltaTime, 0);
 
-                if (Input.GetButtonDown("Shoot (P2)") && CanShoot == true)
+                if (Input.GetAxisRaw("Shoot (P2)") != 0 && CanShoot == true)
                 {
                     StartCoroutine(Shoot());
                 }
