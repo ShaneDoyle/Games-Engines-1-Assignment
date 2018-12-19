@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Generation : MonoBehaviour
 {
-    public int SpawnTime = 2;
+    public float SpawnTime = 2;
     
     private bool StopSpawn = false;
     private float PlayerXPos;
@@ -44,7 +44,7 @@ public class Generation : MonoBehaviour
             StopSpawn = true;
             float xDistance = Random.Range(20, 30);
             Instantiate(enemy, new Vector3(PlayerXPos + xDistance, 5, Random.Range(16, 22)), Quaternion.identity);
-            yield return new WaitForSeconds(SpawnTime);
+            yield return new WaitForSeconds(Random.Range(SpawnTime * 0.5f,SpawnTime) );
             StopSpawn = false;
         }
     }

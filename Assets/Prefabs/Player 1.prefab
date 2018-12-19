@@ -496,7 +496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   cameraDistance: 12
-  rotationSpeed: 270
+  rotationSpeed: 180
   bulletSpawnPoint: {fileID: 1706157479923558}
   bulletPrefab: {fileID: 1510185311839130, guid: c67051e8c61b89d46949b8629b08fa99,
     type: 2}

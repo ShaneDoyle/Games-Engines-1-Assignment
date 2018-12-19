@@ -23,7 +23,6 @@ public class TankMovement : MonoBehaviour
 
     //More Built in components.
     private bool CanMove = false;
-    private bool CanShoot = false;
     Rigidbody RB;
 
     //Pause before spawning.
@@ -67,16 +66,32 @@ public class TankMovement : MonoBehaviour
 
         //If not dead, allow player to move and shoot.
         if (Death == false && CanMove == true)
-        { 
-            transform.Translate(0, 0, Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime, Space.World);
-            transform.Translate(Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime, 0, 0, Space.World);
-            transform.Rotate(0, Input.GetAxis("Rotate") * rotationSpeed * Time.deltaTime, 0);
-
-            if (Input.GetButtonDown("Fire1"))
+        {
+            if (this.name.Contains("Player 1"))
             {
-                GameObject bullet = GameObject.Instantiate<GameObject>(bulletPrefab);
-                bullet.transform.position = bulletSpawnPoint.transform.position;
-                bullet.transform.rotation = transform.rotation;
+                transform.Translate(0, 0, Input.GetAxis("Vertical (P1 Stick)") * moveSpeed * Time.deltaTime, Space.World);
+                transform.Translate(Input.GetAxis("Horizontal (P1 Stick)") * moveSpeed * Time.deltaTime, 0, 0, Space.World);
+                transform.Rotate(0, Input.GetAxis("Rotate (P1)") * rotationSpeed * Time.deltaTime, 0);
+
+                if (Input.GetButtonDown("Shoot (P1)"))
+                {
+                    GameObject bullet = GameObject.Instantiate<GameObject>(bulletPrefab);
+                    bullet.transform.position = bulletSpawnPoint.transform.position;
+                    bullet.transform.rotation = transform.rotation;
+                }
+            }
+            else if (this.name.Contains("Player 2"))
+            {
+                transform.Translate(0, 0, Input.GetAxis("Vertical (P2 Stick)") * moveSpeed * Time.deltaTime, Space.World);
+                transform.Translate(Input.GetAxis("Horizontal (P2 Stick)") * moveSpeed * Time.deltaTime, 0, 0, Space.World);
+                transform.Rotate(0, Input.GetAxis("Rotate (P2)") * rotationSpeed * Time.deltaTime, 0);
+
+                if (Input.GetButtonDown("Shoot (P2)"))
+                {
+                    GameObject bullet = GameObject.Instantiate<GameObject>(bulletPrefab);
+                    bullet.transform.position = bulletSpawnPoint.transform.position;
+                    bullet.transform.rotation = transform.rotation;
+                }
             }
         }
 
