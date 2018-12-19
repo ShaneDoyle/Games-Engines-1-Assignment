@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 64177931153282062}
   - component: {fileID: 114062990441832084}
   - component: {fileID: 114681628294507466}
+  - component: {fileID: 114572476194680066}
   m_Layer: 0
   m_Name: StartingPlane
   m_TagString: Ground
@@ -111,6 +112,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd4b28a08f92e24a95c0de8ddf084ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114572476194680066
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1047677326947188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb144e7bf9894644cb74865fd4a036f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaitToAppear: 2
 --- !u!114 &114681628294507466
 MonoBehaviour:
   m_ObjectHideFlags: 1

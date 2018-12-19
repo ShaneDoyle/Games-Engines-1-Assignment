@@ -24,8 +24,15 @@ public class TankMovement : MonoBehaviour
     //Use this for initialization
     void Start ()
     {
-		
-	}
+        transform.Translate(0, 20000, 0);
+        StartCoroutine(Appear());
+    }
+
+    IEnumerator Appear()
+    {
+        yield return new WaitForSeconds(2);
+        transform.position = new Vector3(0, 20, 20);
+    }
 
     //Update is called once per frame
     void Update()

@@ -90,7 +90,6 @@ public class LandscapeGeneration : MonoBehaviour
                     t = (GameObject)Instantiate(lavaplane, lavapos, Quaternion.identity);
                     t = (GameObject)Instantiate(endingplane, planepos, Quaternion.identity);
                     planepos = new Vector3((x * planeSize + startPos.x), 1f, (z * planeSize + startPos.z));
-                    //t = (GameObject)Instantiate(enditem, planepos, Quaternion.identity);
                 }
                 //Lava Planes.
                 else if (z != 2 || x < 0 || x >= MapLength)
