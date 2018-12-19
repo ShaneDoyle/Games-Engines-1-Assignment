@@ -262,10 +262,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wave: 1
   EnemyLimit: 0
-  MapLength: 3
+  MapLength: 1
   MapLengthExpander: 2
   heightScale: 2
-  detailScale: 10
+  detailScale: 30
 --- !u!4 &192761637
 Transform:
   m_ObjectHideFlags: 0
@@ -513,14 +513,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a19fefce77de50498d4a8dfda368055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingplane: {fileID: 1047677326947188, guid: 664ce5cf362a3044fa0edf76f2d1e060,
-    type: 2}
+  startingplane: {fileID: 0}
   plane: {fileID: 1917424108535776, guid: adff8cd4195e9d24599ebac97e713f64, type: 2}
-  endingplane: {fileID: 1656635685139002, guid: f08b4c6660027ba4d9061e66cc09d457,
-    type: 2}
-  lavaplane: {fileID: 1494232289707926, guid: 14efefa7819ce2c468de18b0009c97ac, type: 2}
+  endingplane: {fileID: 0}
+  lavaplane: {fileID: 0}
   player: {fileID: 652257851}
-  enditem: {fileID: 1782074877751216, guid: 5bef94881a111be4491fc65734d87fe8, type: 2}
+--- !u!1 &774692549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1782074877751216, guid: 5bef94881a111be4491fc65734d87fe8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1544225677}
+--- !u!54 &774692550
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 774692549}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &793281737
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,8 +671,7 @@ MonoBehaviour:
   endingplane: {fileID: 1656635685139002, guid: f08b4c6660027ba4d9061e66cc09d457,
     type: 2}
   lavaplane: {fileID: 1494232289707926, guid: 14efefa7819ce2c468de18b0009c97ac, type: 2}
-  player: {fileID: 0}
-  enditem: {fileID: 1782074877751216, guid: 5bef94881a111be4491fc65734d87fe8, type: 2}
+  player: {fileID: 652257851}
 --- !u!4 &980271872
 Transform:
   m_ObjectHideFlags: 0
@@ -941,14 +957,20 @@ Prefab:
     - target: {fileID: 54877275213983866, guid: 5bef94881a111be4491fc65734d87fe8,
         type: 2}
       propertyPath: m_Constraints
-      value: 126
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 54877275213983866, guid: 5bef94881a111be4491fc65734d87fe8,
         type: 2}
       propertyPath: m_Mass
-      value: 999
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 54877275213983866, guid: 5bef94881a111be4491fc65734d87fe8,
+        type: 2}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 54877275213983866, guid: 5bef94881a111be4491fc65734d87fe8, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 5bef94881a111be4491fc65734d87fe8, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1568842575
@@ -1323,7 +1345,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.5
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10

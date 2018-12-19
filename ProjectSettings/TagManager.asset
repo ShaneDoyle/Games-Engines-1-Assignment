@@ -10,6 +10,7 @@ TagManager:
   - PlayerCamera
   - Lava
   - Global Variables
+  - EndingPlane
   layers:
   - Default
   - TransparentFX

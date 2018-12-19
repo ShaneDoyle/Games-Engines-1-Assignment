@@ -23,7 +23,6 @@ public class LandscapeGeneration : MonoBehaviour
     public GameObject endingplane;
     public GameObject lavaplane;
     public GameObject player;
-    public GameObject enditem;
 
     int planeSize = 10;
     int halfTilesX = 5;
@@ -43,14 +42,14 @@ public class LandscapeGeneration : MonoBehaviour
     }
 
     //Use this for initialization
-    void Start ()
+    void Start()
     {
         this.gameObject.transform.position = Vector3.zero;
         startPos = Vector3.zero;
 
         float updateTime = Time.realtimeSinceStartup;
 
-        for(int x = -5; x < MapLength + 5; x++)
+        for (int x = -5; x < MapLength + 5; x++)
         {
             for (int z = 1; z < 6; z++)
             {
@@ -71,11 +70,11 @@ public class LandscapeGeneration : MonoBehaviour
                     t = (GameObject)Instantiate(lavaplane, lavapos, Quaternion.identity);
                     t = (GameObject)Instantiate(endingplane, planepos, Quaternion.identity);
                     planepos = new Vector3((x * planeSize + startPos.x), 1f, (z * planeSize + startPos.z));
-                    t = (GameObject)Instantiate(enditem, planepos, Quaternion.identity);
+                    //t = (GameObject)Instantiate(enditem, planepos, Quaternion.identity);
                 }
                 //Lava Planes.
                 else if (z != 2 || x < 0 || x >= MapLength)
-                { 
+                {
                     t = (GameObject)Instantiate(lavaplane, lavapos, Quaternion.identity);
                 }
                 //Planes.
@@ -90,13 +89,14 @@ public class LandscapeGeneration : MonoBehaviour
                 t.name = tilename;
                 Tile tile = new Tile(t, updateTime);
                 tiles.Add(tilename, tile);
-               
+
             }
         }
-	}
+    }
 
     //Update is called once per frame
-    /*
+
+        /*
     void Update()
     {
         //To int position.
@@ -154,7 +154,7 @@ public class LandscapeGeneration : MonoBehaviour
                 }
             }
 
-                Hashtable newTerrain = new Hashtable();
+            Hashtable newTerrain = new Hashtable();
             foreach (Tile tls in tiles.Values)
             {
                 if (tls.creationTime != updateTime)
@@ -174,4 +174,5 @@ public class LandscapeGeneration : MonoBehaviour
         }
     }
     */
+
 }
