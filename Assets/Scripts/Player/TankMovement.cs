@@ -105,38 +105,5 @@ public class TankMovement : MonoBehaviour
             Death = true;
             StartCoroutine(KillPlayerByGoo());
         }
-
-        if (col.gameObject.tag == "EndingPlane")
-        {
-
-            //Destroy Players.
-            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Player");
-            for (var i = 0; i < gameObjects.Length; i++)
-            {
-                Destroy(gameObjects[i]);
-            }
-
-            //Destroy Lava.
-            gameObjects = GameObject.FindGameObjectsWithTag("Lava");
-            for (var i = 0; i < gameObjects.Length; i++)
-            {
-                Destroy(gameObjects[i]);
-            }
-
-            //Destroy Plane.
-            gameObjects = GameObject.FindGameObjectsWithTag("Ground");
-            for (var i = 0; i < gameObjects.Length; i++)
-            {
-                Destroy(gameObjects[i]);
-            }
-
-            //Destroy Starting Plane.
-            gameObjects = GameObject.FindGameObjectsWithTag("EndingPlane");
-            for (var i = 0; i < gameObjects.Length; i++)
-            {
-                Destroy(gameObjects[i]);
-            }
-        }
     }
-
 }

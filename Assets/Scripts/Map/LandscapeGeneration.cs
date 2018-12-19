@@ -22,7 +22,8 @@ public class LandscapeGeneration : MonoBehaviour
     public GameObject plane;
     public GameObject endingplane;
     public GameObject lavaplane;
-    public GameObject player;
+    public GameObject player1;
+    public GameObject player2;
 
     int planeSize = 10;
     int halfTilesX = 5;
@@ -32,22 +33,41 @@ public class LandscapeGeneration : MonoBehaviour
 
     Vector3 startPos;
 
-    Hashtable tiles = new Hashtable();
+    //Hashtable tiles = new Hashtable();
 
 
-    void Awake()
+    public void Awake()
     {
         GameObject go = GameObject.Find("Global Variables");
         MapLength = go.GetComponent<GlobalVariables>().MapLength;
+        GenerateLand();
+    }
+
+    void Update()
+    {
+        Player[] allPlayers = GameObject.FindObjectsOfType<Player>();
+        if (allPlayers.Length == 0)
+        {
+            GenerateLand();
+
+            GameObject P;
+            P = Instantiate(player1, new Vector3(0, 5, 22), Quaternion.identity);
+            P = Instantiate(player2, new Vector3(0, 5, 16), Quaternion.identity);
+        }
+    }
+
+
+    IEnumerator MakeLava()
+    {
+        yield return null;
     }
 
     //Use this for initialization
-    void Start()
+    public void GenerateLand()
     {
         this.gameObject.transform.position = Vector3.zero;
         startPos = Vector3.zero;
-
-        float updateTime = Time.realtimeSinceStartup;
+        GameObject P;
 
         for (int x = -5; x < MapLength + 5; x++)
         {
@@ -87,8 +107,6 @@ public class LandscapeGeneration : MonoBehaviour
 
                 string tilename = "Tile_" + ((int)(planepos.x)).ToString() + "_" + ((int)(planepos.z)).ToString();
                 t.name = tilename;
-                Tile tile = new Tile(t, updateTime);
-                tiles.Add(tilename, tile);
 
             }
         }
