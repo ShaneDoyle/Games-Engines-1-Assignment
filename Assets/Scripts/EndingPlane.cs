@@ -22,6 +22,7 @@ public class EndingPlane : MonoBehaviour
     IEnumerator Appear()
     {
         yield return new WaitForSeconds(WaitToAppear);
+        FindObjectOfType<AudioManager>().Play("Pop");
         transform.Translate(0, -20, 0);
     }
 
@@ -32,42 +33,59 @@ public class EndingPlane : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
     }
 
+    IEnumerator DestroyEverything()
+    {
+        FindObjectOfType<LandscapeGeneration>().Awake();
+
+        //Destroy Players.
+        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Player");
+        for (var i = 0; i < gameObjects.Length; i++)
+        {
+            Destroy(gameObjects[i]);
+        }
+
+        //Destroy Enemies.
+        gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+        for (var i = 0; i < gameObjects.Length; i++)
+        {
+            Destroy(gameObjects[i]);
+        }
+
+        //Destroy Lava.
+        gameObjects = GameObject.FindGameObjectsWithTag("Lava");
+        for (var i = 0; i < gameObjects.Length; i++)
+        {
+            Destroy(gameObjects[i]);
+        }
+
+        //Destroy Plane.
+        gameObjects = GameObject.FindGameObjectsWithTag("Ground");
+        for (var i = 0; i < gameObjects.Length; i++)
+        {
+            Destroy(gameObjects[i]);
+        }
+
+        //Destroy Starting Plane.
+        gameObjects = GameObject.FindGameObjectsWithTag("EndingPlane");
+        for (var i = 0; i < gameObjects.Length; i++)
+        {
+            Destroy(gameObjects[i]);
+        }
+
+        GameObject go = GameObject.Find("Global Variables");
+        go.GetComponent<GlobalVariables>().MapLength += go.GetComponent<GlobalVariables>().MapLengthExpander;
+        go.GetComponent<GlobalVariables>().EnemyLimit++;
+        go.GetComponent<GlobalVariables>().detailScale = Random.Range(5, 15);
+        go.GetComponent<GlobalVariables>().heightScale = Random.Range(2, 5);
+
+        yield return null;
+    }
+
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Player")
         {
-
-            //Destroy Players.
-            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Player");
-            for (var i = 0; i < gameObjects.Length; i++)
-            {
-                Destroy(gameObjects[i]);
-            }
-
-            //Destroy Lava.
-            gameObjects = GameObject.FindGameObjectsWithTag("Lava");
-            for (var i = 0; i < gameObjects.Length; i++)
-            {
-                Destroy(gameObjects[i]);
-            }
-
-            //Destroy Plane.
-            gameObjects = GameObject.FindGameObjectsWithTag("Ground");
-            for (var i = 0; i < gameObjects.Length; i++)
-            {
-                Destroy(gameObjects[i]);
-            }
-
-            //Destroy Starting Plane.
-            gameObjects = GameObject.FindGameObjectsWithTag("EndingPlane");
-            for (var i = 0; i < gameObjects.Length; i++)
-            {
-                Destroy(gameObjects[i]);
-            }
-
-            GameObject go = GameObject.Find("Global Variables");
-            go.GetComponent<GlobalVariables>().MapLength++;
-            go.GetComponent<GlobalVariables>().EnemyLimit++;
+            StartCoroutine(DestroyEverything());
         }
     }
 }

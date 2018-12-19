@@ -22,6 +22,7 @@ public class LavaPlane : MonoBehaviour
     IEnumerator Appear()
     {
         yield return new WaitForSeconds(WaitToAppear);
+        FindObjectOfType<AudioManager>().Play("Pop");
         transform.Translate(0, -20, 0);
     }
 }

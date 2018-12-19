@@ -146,11 +146,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Wave: 1
-  EnemyLimit: 2
-  MapLength: 2
-  MapLengthExpander: 2
+  MapLength: 8
+  MapLengthExpander: 1
   heightScale: 2
-  detailScale: 30
+  detailScale: 10
+  EnemyLimit: 3
+  EnemyStartSpeed: 0
+  EnemySpeedIncrease: 0
 --- !u!4 &192761637
 Transform:
   m_ObjectHideFlags: 0
@@ -480,6 +482,11 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: c43d845e2baca934da0a77d3e603d57a, type: 3}
     volume: 1
     pitch: 0.8
+    source: {fileID: 0}
+  - name: Pop
+    clip: {fileID: 8300000, guid: 6d03abfda4e2eed46b41dc297ca4c4e1, type: 3}
+    volume: 1
+    pitch: 1.15
     source: {fileID: 0}
 --- !u!4 &1568842578
 Transform:
