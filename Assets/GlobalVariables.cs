@@ -26,6 +26,7 @@ public class GlobalVariables : MonoBehaviour
     //Built in
     [HideInInspector]
     public bool RegenLand = false;
+    [HideInInspector]
     public float EndingPlaneX;
     [HideInInspector]
     public bool PlayPopSound = true;
@@ -93,9 +94,10 @@ public class GlobalVariables : MonoBehaviour
             EnemyLimit++;
             detailScale = Random.Range(15, 25);
             heightScale = Random.Range(1, 3);
+            PlayPopSound = true;
 
             //Ensure that speed doesn't go too high!
-            if(EnemySpeed >= EnemySpeedMax)
+            if (EnemySpeed >= EnemySpeedMax)
             {
                 EnemySpeed = EnemySpeedMax;
             }

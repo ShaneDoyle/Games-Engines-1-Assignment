@@ -6,13 +6,16 @@ public class LavaPlane : MonoBehaviour
 {
     public float WaitToAppear;
 
-    GameObject GV = GameObject.Find("Global Variables");
-    
+    GameObject GV;
+    bool PlayPopSound;
+
     //Use this for initialization
     void Start()
     {
         transform.Translate(0, 20, 0);
         StartCoroutine(Appear());
+        GV = GameObject.Find("Global Variables");
+        PlayPopSound = GV.GetComponent<GlobalVariables>().PlayPopSound;
     }
 
     //Update is called once per frame
@@ -26,11 +29,12 @@ public class LavaPlane : MonoBehaviour
         yield return new WaitForSeconds(WaitToAppear);
         transform.Translate(0, -20, 0);
 
-        int PlayPopSound = GV.GetComponent<GlobalVariables>().MapLength;
-        if(PlayPopSound > 0 )
+        //Play sound only once.
+        PlayPopSound = GV.GetComponent<GlobalVariables>().PlayPopSound;
+        if(PlayPopSound == true )
         {
-
             FindObjectOfType<AudioManager>().Play("Pop");
+            GV.GetComponent<GlobalVariables>().PlayPopSound = false;
         }
 
     }

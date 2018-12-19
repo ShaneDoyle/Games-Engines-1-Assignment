@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Wave: 1
-  MapLength: 5
+  MapLength: 15
   MapLengthExpander: 1
   heightScale: 1
   detailScale: 1
