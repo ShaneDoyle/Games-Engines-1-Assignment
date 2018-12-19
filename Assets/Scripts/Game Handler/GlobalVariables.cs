@@ -8,21 +8,21 @@ public class GlobalVariables : MonoBehaviour
 {
     //Global Variables
 
-    //Gamemode stuff.
+    [Header("Wave Settings")]
     public int Wave;
+    public Text WaveCounter;
 
-    //Land Stuff
+    [Header("Map Settings")]
     public int MapLength = 10;
     public int MapLengthExpander = 1;
     public int heightScale = 5;
     public float detailScale = 1f;
 
-    //Enemy Stuff
+    [Header("Enemy Settings")]
     public int EnemyLimit;
     public float EnemySpeed;
     public float EnemySpeedIncrease;
     public float EnemySpeedMax;
-
 
     //Built in
     [HideInInspector]
@@ -31,8 +31,6 @@ public class GlobalVariables : MonoBehaviour
     public float EndingPlaneX;
     [HideInInspector]
     public bool PlayPopSound = true;
-
-    public Text WaveCounter;
 
     //Don't apply additions on first wave.
     void Start()
