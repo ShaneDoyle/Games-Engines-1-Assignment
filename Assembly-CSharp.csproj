@@ -61,14 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CameraController.cs" />
     <Compile Include="Assets\CameraOnPlayers.cs" />
     <Compile Include="Assets\CopyRotation.cs" />
     <Compile Include="Assets\GlobalVariables.cs" />
-    <Compile Include="Assets\Lerp.cs" />
-    <Compile Include="Assets\NextWave.cs" />
     <Compile Include="Assets\Player.cs" />
-    <Compile Include="Assets\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\Camera\MiddleOfPlayersLocation.cs" />
@@ -87,9 +83,6 @@
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Tiles\TileTexture.cs" />
     <Compile Include="Assets\Sounds\Sound.cs" />
-    <Compile Include="Assets\TankRotateCannon.cs" />
-    <Compile Include="Assets\TentacleBody.cs" />
-    <Compile Include="Assets\TentacleHead.cs" />
     <None Include="Assets\Colour Changing.shader" />
     <None Include="Assets\LavaShader.shader" />
     <None Include="Assets\LavaWaves.shader" />
