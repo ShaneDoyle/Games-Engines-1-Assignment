@@ -31,12 +31,14 @@ public class MoveSnowbomb : MonoBehaviour
     private float x = 0;
     private bool DeathSoundPlayed = false;
     private bool Expand = true;
+    private float EndingPlaneX;
 
     //Use this for initialization
     void Start()
     {
         GameObject go = GameObject.Find("Global Variables");
         speed = go.GetComponent<GlobalVariables>().EnemySpeed;
+        EndingPlaneX = go.GetComponent<GlobalVariables>().EndingPlaneX;
         myCollider = GetComponent<SphereCollider>();
         maxhp = hp;
         speed *= 0.01f;
@@ -46,6 +48,17 @@ public class MoveSnowbomb : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
+        //Destroy if these conditions are met.
+        if (transform.position.y < -10)
+        {
+            Destroy(gameObject);
+        }
+        //Destroy if behind ending plane.
+        if(transform.position.x > EndingPlaneX )
+        {
+            Destroy(gameObject);
+        }
+
         if (hp != 0)
         {
             FindClosestPlayer();
@@ -182,6 +195,11 @@ public class MoveSnowbomb : MonoBehaviour
     {
         if (gameObject.tag == "Enemy")
         {
+            if (col.gameObject.tag == "Lava")
+            {
+                Destroy(gameObject);
+            }
+
             if (col.gameObject.tag == "Player")
             {
                 hp = maxhp;

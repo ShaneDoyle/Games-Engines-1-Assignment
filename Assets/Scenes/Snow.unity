@@ -146,15 +146,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Wave: 1
-  MapLength: 7
+  MapLength: 5
   MapLengthExpander: 1
   heightScale: 1
   detailScale: 1
   EnemyLimit: 3
-  EnemySpeed: 3
+  EnemySpeed: 2
   EnemySpeedIncrease: 1
   EnemySpeedMax: 10
   RegenLand: 1
+  EndingPlaneX: 0
 --- !u!4 &192761637
 Transform:
   m_ObjectHideFlags: 0
@@ -352,7 +353,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5cd4cf0773f3a7a499ac0f0c0d823b89, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.85
   m_Pitch: 1
   Loop: 1
   Mute: 0

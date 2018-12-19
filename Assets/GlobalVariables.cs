@@ -26,6 +26,7 @@ public class GlobalVariables : MonoBehaviour
     //Built in
     [HideInInspector]
     public bool RegenLand = false;
+    public float EndingPlaneX;
 
     //Don't apply additions on first wave.
     void Start()
@@ -88,7 +89,7 @@ public class GlobalVariables : MonoBehaviour
             EnemySpeed += EnemySpeedIncrease;
             EnemyLimit++;
             detailScale = Random.Range(15, 25);
-            heightScale = Random.Range(1, Wave);
+            heightScale = Random.Range(1, 3);
 
             //Ensure that speed doesn't go too high!
             if(EnemySpeed >= EnemySpeedMax)

@@ -49,6 +49,14 @@ public class TankMovement : MonoBehaviour
     //Update is called once per frame.
     void Update()
     {
+
+        if (Input.GetKey("escape"))
+        { 
+            Application.Quit();
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+
+
         //If not dead, allow player to move and shoot.
         if (Death == false && CanMove == true)
         { 

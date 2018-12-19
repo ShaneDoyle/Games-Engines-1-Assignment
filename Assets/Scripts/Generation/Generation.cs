@@ -42,8 +42,8 @@ public class Generation : MonoBehaviour
         if (GameObject.FindGameObjectsWithTag("Enemy").Length < EnemyLimit && StopSpawn == false)
         {
             StopSpawn = true;
-            float xDistance = Random.Range(20, 40);
-            Instantiate(enemy, new Vector3(PlayerXPos + xDistance, 10, Random.Range(16, 22)), Quaternion.identity);
+            float xDistance = Random.Range(20, 30);
+            Instantiate(enemy, new Vector3(PlayerXPos + xDistance, 5, Random.Range(16, 22)), Quaternion.identity);
             yield return new WaitForSeconds(SpawnTime);
             StopSpawn = false;
         }

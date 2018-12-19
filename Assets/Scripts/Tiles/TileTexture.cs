@@ -10,7 +10,7 @@ public class TileTexture : MonoBehaviour
 
     float brightness = -0.20f;
     public float scrollSpeed = 1f;
-    public float brightnessSpeed = 6.5f;
+    public float brightnessSpeed = 160.5f;
     private int reverse = -1;
 
 

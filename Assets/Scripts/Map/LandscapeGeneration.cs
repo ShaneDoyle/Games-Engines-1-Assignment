@@ -53,8 +53,9 @@ public class LandscapeGeneration : MonoBehaviour
             GenerateLand();
 
             GameObject P;
-            P = Instantiate(player1, new Vector3(0, 5, 22), Quaternion.identity);
-            P = Instantiate(player2, new Vector3(0, 5, 16), Quaternion.identity);
+            P = Instantiate(player1, new Vector3(0, 5, 10), Quaternion.Euler(0, 90, 0));
+
+            P = Instantiate(player2, new Vector3(0, 5, 16), Quaternion.Euler(0, 90, 0));
         }
     }
 
@@ -93,6 +94,7 @@ public class LandscapeGeneration : MonoBehaviour
                     t = (GameObject)Instantiate(lavaplane, lavapos, Quaternion.identity);
                     t = (GameObject)Instantiate(endingplane, planepos, Quaternion.identity);
                     planepos = new Vector3((x * planeSize + startPos.x), 1f, (z * planeSize + startPos.z));
+                    GlobalVariables.GetComponent<GlobalVariables>().EndingPlaneX = planepos.x; //Send to global variables.
                 }
                 //Lava Planes.
                 else if (z != 2 || x < 0 || x >= MapLength)
