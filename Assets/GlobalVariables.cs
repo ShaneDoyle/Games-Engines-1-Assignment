@@ -20,6 +20,7 @@ public class GlobalVariables : MonoBehaviour
     public int EnemyLimit;
     public float EnemySpeed;
     public float EnemySpeedIncrease;
+    public float EnemySpeedMax;
 
 
     //Built in
@@ -82,12 +83,18 @@ public class GlobalVariables : MonoBehaviour
             }
 
             //Increase next wave!
-            go.GetComponent<GlobalVariables>().Wave++;
-            go.GetComponent<GlobalVariables>().MapLength += go.GetComponent<GlobalVariables>().MapLengthExpander;
-            go.GetComponent<GlobalVariables>().EnemySpeed += EnemySpeedIncrease;
-            go.GetComponent<GlobalVariables>().EnemyLimit++;
-            go.GetComponent<GlobalVariables>().detailScale = Random.Range(10, 25);
-            go.GetComponent<GlobalVariables>().heightScale = Random.Range(2, 4);
+            Wave++;
+            MapLength += MapLengthExpander;
+            EnemySpeed += EnemySpeedIncrease;
+            EnemyLimit++;
+            detailScale = Random.Range(15, 25);
+            heightScale = Random.Range(1, Wave);
+
+            //Ensure that speed doesn't go too high!
+            if(EnemySpeed >= EnemySpeedMax)
+            {
+                EnemySpeed = EnemySpeedMax;
+            }
         }
     }
 }

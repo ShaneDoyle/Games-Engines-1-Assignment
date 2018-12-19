@@ -13,9 +13,9 @@ public class MapGeneration : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        GameObject go = GameObject.Find("Global Variables");
-        heightScale = go.GetComponent<GlobalVariables>().heightScale;
-        detailScale = go.GetComponent<GlobalVariables>().detailScale;
+        GameObject GV = GameObject.Find("Global Variables");
+        heightScale = GV.GetComponent<GlobalVariables>().heightScale;
+        detailScale = GV.GetComponent<GlobalVariables>().detailScale;
 
         Mesh mesh = this.GetComponent<MeshFilter>().mesh;
         Vector3[] vertices = mesh.vertices;
