@@ -150,7 +150,7 @@ MonoBehaviour:
   MapLengthExpander: 1
   heightScale: 1
   detailScale: 1
-  EnemyLimit: 3
+  EnemyLimit: 0
   EnemySpeed: 2
   EnemySpeedIncrease: 1
   EnemySpeedMax: 10

@@ -23,6 +23,7 @@ public class TankMovement : MonoBehaviour
 
     //More Built in components.
     private bool CanMove = false;
+    private bool CanShoot = false;
     Rigidbody RB;
 
     //Pause before spawning.
