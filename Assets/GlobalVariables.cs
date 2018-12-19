@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class GlobalVariables : MonoBehaviour
@@ -30,6 +31,8 @@ public class GlobalVariables : MonoBehaviour
     public float EndingPlaneX;
     [HideInInspector]
     public bool PlayPopSound = true;
+
+    public Text WaveCounter;
 
     //Don't apply additions on first wave.
     void Start()
@@ -102,5 +105,8 @@ public class GlobalVariables : MonoBehaviour
                 EnemySpeed = EnemySpeedMax;
             }
         }
+
+        WaveCounter.text = "Wave: " + Wave;
+
     }
 }
