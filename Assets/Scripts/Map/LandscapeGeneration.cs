@@ -54,7 +54,6 @@ public class LandscapeGeneration : MonoBehaviour
 
             GameObject P;
             P = Instantiate(player1, new Vector3(0, 5, 10), Quaternion.Euler(0, 90, 0));
-
             P = Instantiate(player2, new Vector3(0, 5, 16), Quaternion.Euler(0, 90, 0));
         }
     }

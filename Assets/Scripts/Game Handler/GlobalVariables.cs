@@ -6,8 +6,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class GlobalVariables : MonoBehaviour
 {
-    //Global Variables
-
+    //Global Variables that will be used by other GameObjects.
     [Header("Wave Settings")]
     public int Wave;
     public Text WaveCounter;
@@ -24,7 +23,7 @@ public class GlobalVariables : MonoBehaviour
     public float EnemySpeedIncrease;
     public float EnemySpeedMax;
 
-    //Built in
+    //Built in variables.
     [HideInInspector]
     public bool RegenLand = false;
     [HideInInspector]
@@ -41,27 +40,19 @@ public class GlobalVariables : MonoBehaviour
         EnemySpeed -= EnemySpeedIncrease;
     }
 
-
     //Check if game needs to regen land.
     void Update()
     {
         if(RegenLand == true)
         {
-            GameObject go = GameObject.Find("Global Variables");
-            go.GetComponent<GlobalVariables>().RegenLand = false;
+            GameObject GV = GameObject.Find("Global Variables");
+            GV.GetComponent<GlobalVariables>().RegenLand = false;
 
             //Regen land function.
             FindObjectOfType<LandscapeGeneration>().Awake();
 
-            //Destroy Players.
-            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Player");
-            for (var i = 0; i < gameObjects.Length; i++)
-            {
-                // Destroy(gameObjects[i]);
-            }
-
             //Destroy Enemies.
-            gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
             for (var i = 0; i < gameObjects.Length; i++)
             {
                 Destroy(gameObjects[i]);
@@ -88,7 +79,7 @@ public class GlobalVariables : MonoBehaviour
                 Destroy(gameObjects[i]);
             }
 
-            //Increase next wave!
+            //Increase variables for next wave.
             Wave++;
             MapLength += MapLengthExpander;
             EnemySpeed += EnemySpeedIncrease;
@@ -104,6 +95,7 @@ public class GlobalVariables : MonoBehaviour
             }
         }
 
+        //Display wave number to the player.
         WaveCounter.text = "Wave: " + Wave;
 
     }

@@ -4,18 +4,11 @@ using UnityEngine;
 
 public class CameraOnPlayers : MonoBehaviour
 {
-
+    //Input variables.
     public GameObject target;
     public float LerpTime = 0.2f;
-    public float cameraDistance = 10f;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
+    //Follow average X coordinates of players.
     void Update()
     {
         transform.position = new Vector3(target.transform.position.x, transform.position.y, transform.position.z);

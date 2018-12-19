@@ -7,10 +7,10 @@ using UnityEngine;
 [System.Serializable]
 public class AudioManager : MonoBehaviour
 {
-
+    //Take in sounds used in game.
     public Sound[] sounds;
 
-	//Use this for initialization
+	//Initialization.
 	void Awake ()
     {
 		foreach (Sound s in sounds)
@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
         }
 	}
 	
-
+    //Function to play a sound.
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
