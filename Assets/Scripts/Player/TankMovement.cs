@@ -42,7 +42,14 @@ public class TankMovement : MonoBehaviour
         yield return new WaitForSeconds(2.25f);
         FindObjectOfType<AudioManager>().Play("Pop");
         RB.useGravity = true;
-        transform.position = new Vector3(0, 5, 20);
+        if (this.name.Contains("Player 1"))
+        {   
+            transform.position = new Vector3(-2, 5, 22);
+        }
+        else
+        {
+            transform.position = new Vector3(-2, 5, 18);
+        }
         CanMove = true;
     }
 
