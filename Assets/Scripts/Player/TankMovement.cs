@@ -21,17 +21,24 @@ public class TankMovement : MonoBehaviour
     private float yDown = 0.01f;
     private float zDown = 0.01f;
 
+    //More Built in components.
+    Rigidbody RB;
+
     //Use this for initialization
     void Start ()
     {
         transform.Translate(0, 20000, 0);
+
+        RB = GetComponent<Rigidbody>();
+        RB.useGravity = false;
         StartCoroutine(Appear());
     }
 
     IEnumerator Appear()
     {
-        yield return new WaitForSeconds(2);
-        transform.position = new Vector3(0, 20, 20);
+        yield return new WaitForSeconds(3);
+        RB.useGravity = true;
+        transform.position = new Vector3(0, 5, 20);
     }
 
     //Update is called once per frame

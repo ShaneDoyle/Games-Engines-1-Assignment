@@ -32,14 +32,15 @@ public class LandscapeGeneration : MonoBehaviour
     int MapLength;
 
     Vector3 startPos;
+    GameObject GlobalVariables;
 
     //Hashtable tiles = new Hashtable();
 
 
     public void Awake()
     {
-        GameObject go = GameObject.Find("Global Variables");
-        MapLength = go.GetComponent<GlobalVariables>().MapLength;
+        GlobalVariables = GameObject.Find("Global Variables");
+        MapLength = GlobalVariables.GetComponent<GlobalVariables>().MapLength;
         GenerateLand();
     }
 
@@ -65,6 +66,7 @@ public class LandscapeGeneration : MonoBehaviour
     //Use this for initialization
     public void GenerateLand()
     {
+        MapLength = GlobalVariables.GetComponent<GlobalVariables>().MapLength;
         this.gameObject.transform.position = Vector3.zero;
         startPos = Vector3.zero;
         GameObject P;

@@ -64,6 +64,10 @@ public class EndingPlane : MonoBehaviour
             {
                 Destroy(gameObjects[i]);
             }
+
+            GameObject go = GameObject.Find("Global Variables");
+            go.GetComponent<GlobalVariables>().MapLength++;
+            go.GetComponent<GlobalVariables>().EnemyLimit++;
         }
     }
 }

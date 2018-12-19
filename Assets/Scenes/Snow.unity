@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Wave: 1
-  EnemyLimit: 0
+  EnemyLimit: 2
   MapLength: 2
   MapLengthExpander: 2
   heightScale: 2
