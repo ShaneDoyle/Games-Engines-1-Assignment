@@ -144,9 +144,10 @@ MonoBehaviour:
   WaveCounter: {fileID: 1639626882}
   MapLength: 5
   MapLengthExpander: 1
-  heightScale: 1
-  detailScale: 1
+  HeightScale: 5
+  DetailScale: 1
   EnemyLimit: 1
+  EnemyHP: 1
   EnemySpeed: 2
   EnemySpeedIncrease: 1
   EnemySpeedMax: 10
@@ -452,14 +453,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a19fefce77de50498d4a8dfda368055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingplane: {fileID: 1047677326947188, guid: 664ce5cf362a3044fa0edf76f2d1e060,
+  StartingPlane: {fileID: 1047677326947188, guid: 664ce5cf362a3044fa0edf76f2d1e060,
     type: 2}
-  plane: {fileID: 1917424108535776, guid: adff8cd4195e9d24599ebac97e713f64, type: 2}
-  endingplane: {fileID: 1656635685139002, guid: f08b4c6660027ba4d9061e66cc09d457,
+  Plane: {fileID: 1917424108535776, guid: adff8cd4195e9d24599ebac97e713f64, type: 2}
+  EndingPlane: {fileID: 1656635685139002, guid: f08b4c6660027ba4d9061e66cc09d457,
     type: 2}
-  lavaplane: {fileID: 1494232289707926, guid: 14efefa7819ce2c468de18b0009c97ac, type: 2}
-  player1: {fileID: 1273318261692978, guid: 3718252117b98944080023d4fe1095cb, type: 2}
-  player2: {fileID: 1430374800037882, guid: 869b0d1434e6e8c4791e1c55124fcaab, type: 2}
+  LavaPlane: {fileID: 1494232289707926, guid: 14efefa7819ce2c468de18b0009c97ac, type: 2}
+  Player1: {fileID: 1273318261692978, guid: 3718252117b98944080023d4fe1095cb, type: 2}
+  Player2: {fileID: 1430374800037882, guid: 869b0d1434e6e8c4791e1c55124fcaab, type: 2}
 --- !u!4 &980271872
 Transform:
   m_ObjectHideFlags: 0

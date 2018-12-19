@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d1933444251be46a605f6f3c674966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 0
-  brightnessSpeed: 2
+  LavaSpeed: 2
+  BrightnessSpeed: 2
 --- !u!114 &114998530599671574
 MonoBehaviour:
   m_ObjectHideFlags: 1

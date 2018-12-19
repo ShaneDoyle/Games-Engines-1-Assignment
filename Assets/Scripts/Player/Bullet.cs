@@ -5,35 +5,33 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 20;
-    public float gravity = 0f;
+    //Input variables.
+    public float Speed = 20;
 
-    // Use this for initialization
+    //Initialisation.
     void Start()
     {
         Invoke("KillMe", 1);
-        gravity *= gravity;
         FindObjectOfType<AudioManager>().Play("Player Shoot");
     }
 
+    //Destroy self.
     void KillMe()
     {
         GameObject.Destroy(this.gameObject);
     }
 
-    // Update is called once per frame
+    //Update components.
     void Update()
     {
-        gravity += 0.001f;
-        transform.Translate(0, 0, speed * Time.deltaTime);
+        transform.Translate(0, 0, Speed * Time.deltaTime);
     }
 
-    //Kill self if touching a player.
+    //Kill self if touching an enemy.
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Enemy")
         {
-            //HitSound.Play();
              Destroy(gameObject);
         }
     }

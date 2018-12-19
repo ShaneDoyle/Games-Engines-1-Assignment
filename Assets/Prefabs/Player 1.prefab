@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 33528239252463902}
   - component: {fileID: 23423135032450820}
   - component: {fileID: 65159827645932012}
-  - component: {fileID: 114340473108560168}
   m_Layer: 0
   m_Name: TankCannon
   m_TagString: Player
@@ -78,9 +77,6 @@ GameObject:
   - component: {fileID: 33645830275412080}
   - component: {fileID: 23588614629914500}
   - component: {fileID: 135088443304709732}
-  - component: {fileID: 114579384856924044}
-  - component: {fileID: 114616998937188412}
-  - component: {fileID: 114313395385316326}
   m_Layer: 0
   m_Name: BottomBody
   m_TagString: Player
@@ -494,34 +490,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08720b34f6fde449b4dd4f3a27e161b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  cameraDistance: 12
-  rotationSpeed: 180
-  bulletSpawnPoint: {fileID: 1706157479923558}
-  bulletPrefab: {fileID: 1510185311839130, guid: c67051e8c61b89d46949b8629b08fa99,
+  MoveSpeed: 5
+  RotationSpeed: 180
+  BulletSpawnPoint: {fileID: 1445201182495816}
+  BulletPrefab: {fileID: 1510185311839130, guid: c67051e8c61b89d46949b8629b08fa99,
     type: 2}
---- !u!114 &114313395385316326
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1556136110304736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f232dd6d18a0d2c449842c4135a22bc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114340473108560168
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1445201182495816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e4310a145bff5a4288245b66de92cfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114499313790826944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -531,31 +504,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 606d780b15ac83a48bf18d1d5e888b58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114579384856924044
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1556136110304736}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec9cbc2e23e60e94cad34ef685caa202, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  hp: 3
-  deathSound: {fileID: 0}
---- !u!114 &114616998937188412
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1556136110304736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f232dd6d18a0d2c449842c4135a22bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!135 &135088443304709732

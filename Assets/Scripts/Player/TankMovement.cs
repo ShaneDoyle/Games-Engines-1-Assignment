@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class TankMovement : MonoBehaviour
 {
+    [Header("Movement Settings")]
+    public float MoveSpeed;
+    public float RotationSpeed;
 
-    public float moveSpeed = 5;
-    public float cameraDistance = 10;
-    public float rotationSpeed = 90;
-
-    public GameObject bulletSpawnPoint;
-    public GameObject bulletPrefab;
+    [Header("Bullet Settings")]
+    public GameObject BulletSpawnPoint;
+    public GameObject BulletPrefab;
 
     //Built in Death Variables.
     private bool Death = false;
@@ -21,12 +21,12 @@ public class TankMovement : MonoBehaviour
     private float yDown = 0.01f;
     private float zDown = 0.01f;
 
-    //More Built in components.
+    //Built in components.
     private bool CanMove = false;
     private bool CanShoot = true;
     Rigidbody RB;
 
-    //Pause before spawning.
+    //Pause before spawning & initialisation.
     void Start ()
     {
         CanMove = false;
@@ -58,31 +58,24 @@ public class TankMovement : MonoBehaviour
     IEnumerator Shoot()
     {
         CanShoot = false;
-        GameObject bullet = GameObject.Instantiate<GameObject>(bulletPrefab);
-        bullet.transform.position = bulletSpawnPoint.transform.position;
+        GameObject bullet = GameObject.Instantiate<GameObject>(BulletPrefab);
+        bullet.transform.position = BulletSpawnPoint.transform.position;
         bullet.transform.rotation = transform.rotation;
         yield return new WaitForSeconds(0.33f);
         CanShoot = true;
     }
 
-    //Update is called once per frame.
+    //Update player.
     void Update()
     {
-
-        if (Input.GetKey("escape"))
-        { 
-            Application.Quit();
-        }
-
-
         //If not dead, allow player to move and shoot.
         if (Death == false && CanMove == true)
         {
             if (this.name.Contains("Player 1"))
             {
-                transform.Translate(0, 0, Input.GetAxis("Vertical (P1 Stick)") * moveSpeed * Time.deltaTime, Space.World);
-                transform.Translate(Input.GetAxis("Horizontal (P1 Stick)") * moveSpeed * Time.deltaTime, 0, 0, Space.World);
-                transform.Rotate(0, Input.GetAxis("Rotate (P1)") * rotationSpeed * Time.deltaTime, 0);
+                transform.Translate(0, 0, Input.GetAxis("Vertical (P1 Stick)") * MoveSpeed * Time.deltaTime, Space.World);
+                transform.Translate(Input.GetAxis("Horizontal (P1 Stick)") * MoveSpeed * Time.deltaTime, 0, 0, Space.World);
+                transform.Rotate(0, Input.GetAxis("Rotate (P1)") * RotationSpeed * Time.deltaTime, 0);
 
                 if (Input.GetAxisRaw("Shoot (P1)") != 0 && CanShoot == true)
                 {
@@ -91,9 +84,9 @@ public class TankMovement : MonoBehaviour
             }
             else if (this.name.Contains("Player 2"))
             {
-                transform.Translate(0, 0, Input.GetAxis("Vertical (P2 Stick)") * moveSpeed * Time.deltaTime, Space.World);
-                transform.Translate(Input.GetAxis("Horizontal (P2 Stick)") * moveSpeed * Time.deltaTime, 0, 0, Space.World);
-                transform.Rotate(0, Input.GetAxis("Rotate (P2)") * rotationSpeed * Time.deltaTime, 0);
+                transform.Translate(0, 0, Input.GetAxis("Vertical (P2 Stick)") * MoveSpeed * Time.deltaTime, Space.World);
+                transform.Translate(Input.GetAxis("Horizontal (P2 Stick)") * MoveSpeed * Time.deltaTime, 0, 0, Space.World);
+                transform.Rotate(0, Input.GetAxis("Rotate (P2)") * RotationSpeed * Time.deltaTime, 0);
 
                 if (Input.GetAxisRaw("Shoot (P2)") != 0 && CanShoot == true)
                 {

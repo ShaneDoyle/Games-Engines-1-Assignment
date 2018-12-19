@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class LavaPlane : MonoBehaviour
 {
-    public float WaitToAppear;
+    //Variables.
+    public float WaitToAppear; //Time to "pop" into the game.
 
+    //Built in variables.
     GameObject GV;
     bool PlayPopSound;
 
-    //Use this for initialization
+    //Initialisation.
     void Start()
     {
         transform.Translate(0, 20, 0);
@@ -18,12 +20,7 @@ public class LavaPlane : MonoBehaviour
         PlayPopSound = GV.GetComponent<GlobalVariables>().PlayPopSound;
     }
 
-    //Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    //Appear into game.
     IEnumerator Appear()
     {
         yield return new WaitForSeconds(WaitToAppear);

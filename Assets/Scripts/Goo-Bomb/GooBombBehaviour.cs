@@ -5,16 +5,11 @@ using UnityEngine;
 public class GooBombBehaviour : MonoBehaviour
 {
     //Input Variables.
-    public Transform target;
-    public float hp = 3;
+    private float hp = 3;
     private float maxhp;
     private float speed;
-    public AudioSource deathSound;
 
-
-    Vector3 toTarget;
-
-    //Emission of HP.
+    //Emission of HP. Makes Goo less bright as HP lowers.
     Color color = Color.green;
     Renderer rend;
 
@@ -26,26 +21,26 @@ public class GooBombBehaviour : MonoBehaviour
     private float yDown = 0.03f;
     private float zDown = 0.03f;
 
-    //Built in.
+    //Built in variables.
     private SphereCollider myCollider;
     private float x = 0;
     private bool DeathSoundPlayed = false;
     private bool Expand = true;
     private float EndingPlaneX;
 
-    //Use this for initialization
+    //Initialisation.
     void Start()
     {
-        GameObject go = GameObject.Find("Global Variables");
-        speed = go.GetComponent<GlobalVariables>().EnemySpeed;
-        EndingPlaneX = go.GetComponent<GlobalVariables>().EndingPlaneX;
+        GameObject GV = GameObject.Find("Global Variables");
+        speed = GV.GetComponent<GlobalVariables>().EnemySpeed;
+        hp = GV.GetComponent<GlobalVariables>().EnemyHP;
+        EndingPlaneX = GV.GetComponent<GlobalVariables>().EndingPlaneX;
         myCollider = GetComponent<SphereCollider>();
         maxhp = hp;
         speed *= 0.01f;
     }
 
-
-    //Update is called once per frame
+    //Make Goo-Bomb do things.
     void Update()
     {
         //Destroy if these conditions are met.
@@ -59,6 +54,7 @@ public class GooBombBehaviour : MonoBehaviour
             Destroy(gameObject);
         }
 
+        //Move towards closest player and adjust spinning speed.
         if (hp != 0)
         {
             FindClosestPlayer();
@@ -68,28 +64,26 @@ public class GooBombBehaviour : MonoBehaviour
         {
             x += 4;
         }
-
-        //Rolling Stuff
         if (x > 360.0f)
         {
             x = 0.0f;
         }
         transform.localRotation = Quaternion.Euler(0, x, 0);
 
+        //Change colour with HP.
         GetComponent<Renderer>().material.color = color;
-        GetComponent<Renderer>().material.SetColor("_EmissionColor", color * (hp * 0.075f));
-
+        GetComponent<Renderer>().material.SetColor("_EmissionColor", color * (hp * 0.10f));
 
         //Death
         if (hp == 0)
         {
             if (DeathSoundPlayed == false)
             {
-                // deathSound.Play();
                 FindObjectOfType<AudioManager>().Play("Goo Death");
                 DeathSoundPlayed = true;
             }
 
+            //"Squish" animation.
             if (transform.localScale.y >= 0.3F)
             {
                 transform.localScale -= new Vector3(-0.05f, 0.10f, -0.05f);
@@ -98,10 +92,9 @@ public class GooBombBehaviour : MonoBehaviour
 
             //Start death function.
             gameObject.tag = "Untagged";
-            StartCoroutine(Explode());
+            StartCoroutine(Squish());
         }
     }
-
 
     //Use to move to go to closest player.
     void FindClosestPlayer()
@@ -113,7 +106,6 @@ public class GooBombBehaviour : MonoBehaviour
 
         foreach(Player currentPlayer in allPlayers)
         {
-            
             float distancetoPlayer = (currentPlayer.transform.position - this.transform.position).sqrMagnitude;
             if(distancetoPlayer < distancetoClosestPlayer)
             {
@@ -122,7 +114,6 @@ public class GooBombBehaviour : MonoBehaviour
                 closestPlayer = currentPlayer;
             }
         }
-
 
         //Chase players if they exist.
         if (allPlayers.Length > 0)
@@ -141,7 +132,7 @@ public class GooBombBehaviour : MonoBehaviour
         }
     }
 
-    //If not killed, will grow and get faster. Prevents player from ignoring enemies.
+    //If player is behind goo, they will speed up very fast. This prevents player from ignoring enemies.
     IEnumerator ExpandGoo(float waittime)
     {
         Expand = false;
@@ -154,8 +145,8 @@ public class GooBombBehaviour : MonoBehaviour
         yield return null;
     }
 
-    //When bomb dies, explode!
-    IEnumerator Explode()
+    //When bomb dies, squish and fade out.
+    IEnumerator Squish()
     {
         yield return new WaitForSeconds(1);
         transform.localScale -= new Vector3(xDown, 0, zDown);
@@ -174,37 +165,24 @@ public class GooBombBehaviour : MonoBehaviour
         
     }
 
-    //Explode into pieces!
-    void createDeathEffect(int x, int y, int z)
-    {
-        //Create pieces.
-        deathsphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-
-        //Set piece positions and scale.
-        deathsphere.transform.position = transform.position + new Vector3(deathSphereSize * x, deathSphereSize * y, deathSphereSize * z);
-        deathsphere.transform.localScale = new Vector3(deathSphereSize, deathSphereSize, deathSphereSize);
-
-        //Add Rigidbody and mass.
-        deathsphere.AddComponent<Rigidbody>();
-        deathsphere.GetComponent<Rigidbody>().mass = 0.2f;
-    }
-
-
     //Take damage from objects.
     void OnCollisionEnter(Collision col)
     {
         if (gameObject.tag == "Enemy")
         {
+            //Die if touching lava.
             if (col.gameObject.tag == "Lava")
             {
                 Destroy(gameObject);
             }
-
+            
+            //Restore HP when Goo-Bomb kills player.
             if (col.gameObject.tag == "Player")
             {
                 hp = maxhp;
             }
 
+            //Take damage from bullet.
             if (col.gameObject.tag == "Bullet")
             {
                 //Lose HP when hit.

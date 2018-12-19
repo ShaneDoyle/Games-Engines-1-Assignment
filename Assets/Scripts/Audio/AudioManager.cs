@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
     //Take in sounds used in game.
     public Sound[] sounds;
 
-	//Initialization.
+	//Initialisation.
 	void Awake ()
     {
 		foreach (Sound s in sounds)

@@ -76,7 +76,7 @@
     <Compile Include="Assets\Scripts\Tiles\EndingPlane.cs" />
     <Compile Include="Assets\Scripts\Tiles\LavaPlane.cs" />
     <Compile Include="Assets\Scripts\Tiles\MoveStartingPlane.cs" />
-    <Compile Include="Assets\Scripts\Tiles\TileTexture.cs" />
+    <Compile Include="Assets\Scripts\Tiles\UpdateLava.cs" />
     <None Include="Assets\Colour Changing.shader" />
     <None Include="Assets\LavaShader.shader" />
     <None Include="Assets\LavaWaves.shader" />

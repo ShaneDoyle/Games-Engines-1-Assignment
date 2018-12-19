@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class MapGeneration : MonoBehaviour
 {
-
     //Land Variables.
-    int heightScale;
-    float detailScale;
+    int HeightScale;
+    float DetailScale;
 
-
-    // Use this for initialization
+    //Initialisation.
     void Awake()
     {
         GameObject GV = GameObject.Find("Global Variables");
-        heightScale = GV.GetComponent<GlobalVariables>().heightScale;
-        detailScale = GV.GetComponent<GlobalVariables>().detailScale;
+        HeightScale = GV.GetComponent<GlobalVariables>().HeightScale;
+        DetailScale = GV.GetComponent<GlobalVariables>().DetailScale;
 
         Mesh mesh = this.GetComponent<MeshFilter>().mesh;
         Vector3[] vertices = mesh.vertices;
         for (int v = 0; v < vertices.Length; v++)
         {
-            vertices[v].y = Mathf.PerlinNoise((vertices[v].x + this.transform.position.x) / detailScale,
-                                                (vertices[v].z + this.transform.position.z) / detailScale) * heightScale;
+            vertices[v].y = Mathf.PerlinNoise((vertices[v].x + this.transform.position.x) / DetailScale,
+                                                (vertices[v].z + this.transform.position.z) / DetailScale) * HeightScale;
         }
 
         mesh.vertices = vertices;

@@ -14,11 +14,12 @@ public class GlobalVariables : MonoBehaviour
     [Header("Map Settings")]
     public int MapLength = 10;
     public int MapLengthExpander = 1;
-    public int heightScale = 5;
-    public float detailScale = 1f;
+    public int HeightScale = 5;
+    public float DetailScale = 1f;
 
     [Header("Enemy Settings")]
     public int EnemyLimit;
+    public float EnemyHP;
     public float EnemySpeed;
     public float EnemySpeedIncrease;
     public float EnemySpeedMax;
@@ -84,8 +85,8 @@ public class GlobalVariables : MonoBehaviour
             MapLength += MapLengthExpander;
             EnemySpeed += EnemySpeedIncrease;
             EnemyLimit++;
-            detailScale = Random.Range(15, 25);
-            heightScale = Random.Range(1, 3);
+            DetailScale = Random.Range(15, 25);
+            HeightScale = Random.Range(1, 3);
             PlayPopSound = true;
 
             //Ensure that speed doesn't go too high!

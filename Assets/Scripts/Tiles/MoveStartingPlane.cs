@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class MoveStartingPlane : MonoBehaviour {
 
-	// Use this for initialization
-	void Start ()
+    //Initialisation. Move plane slightly right for a small correction.
+    void Start ()
     {
         transform.Translate(0.1f, 0, 0);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }
