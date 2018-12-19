@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveSnowbomb : MonoBehaviour
+public class GooBombBehaviour : MonoBehaviour
 {
     //Input Variables.
     public Transform target;

@@ -2,31 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Generation : MonoBehaviour
+public class EnemyGeneration : MonoBehaviour
 {
+    //Input.
     public float SpawnTime = 2;
-    
-    private bool StopSpawn = false;
-    private float PlayerXPos;
     public GameObject enemy;
 
-
-    //Gamemode Control
+    //Gamemode control.
     private int Wave;
     private int EnemyLimit;
-    //public Transform test = GameObject.Find("Your_Name_Here").transform.position;
+    GameObject GV;
 
-    GameObject go;
+    //Spawn management.
+    private bool StopSpawn = false;
+    private float PlayerXPos;
 
 
     //Use this for initialization.
     void Awake ()
     {
-        go = GameObject.Find("Global Variables");
-        EnemyLimit = go.GetComponent<GlobalVariables>().EnemyLimit;
+        GV = GameObject.Find("Global Variables");
+        EnemyLimit = GV.GetComponent<GlobalVariables>().EnemyLimit;
     }
 
-	
 	//Update is called once per frame.
 	void Update ()
     {
@@ -37,8 +35,8 @@ public class Generation : MonoBehaviour
     //Spawn enemy.
     IEnumerator SpawnEnemy()
     {
-        EnemyLimit = go.GetComponent<GlobalVariables>().EnemyLimit;
-
+        //Spawn enemies when there are less than the limit and spawner timer is ready.
+        EnemyLimit = GV.GetComponent<GlobalVariables>().EnemyLimit;
         if (GameObject.FindGameObjectsWithTag("Enemy").Length < EnemyLimit && StopSpawn == false)
         {
             StopSpawn = true;

@@ -62,13 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Audio\Sound.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraOnPlayers.cs" />
     <Compile Include="Assets\Scripts\Camera\MiddleOfPlayersLocation.cs" />
-    <Compile Include="Assets\Scripts\Game Handler\GameHandler.cs" />
     <Compile Include="Assets\Scripts\Game Handler\GlobalVariables.cs" />
-    <Compile Include="Assets\Scripts\Generation\Generation.cs" />
-    <Compile Include="Assets\Scripts\Goo-Bomb\MoveSnowbomb.cs" />
-    <Compile Include="Assets\Scripts\Goo-Bomb\RotateBall.cs" />
+    <Compile Include="Assets\Scripts\Generation\EnemyGeneration.cs" />
+    <Compile Include="Assets\Scripts\Goo-Bomb\GooBombBehaviour.cs" />
     <Compile Include="Assets\Scripts\Map\LandscapeGeneration.cs" />
     <Compile Include="Assets\Scripts\Map\MapGeneration.cs" />
     <Compile Include="Assets\Scripts\Player\Bullet.cs" />
@@ -78,7 +77,6 @@
     <Compile Include="Assets\Scripts\Tiles\LavaPlane.cs" />
     <Compile Include="Assets\Scripts\Tiles\MoveStartingPlane.cs" />
     <Compile Include="Assets\Scripts\Tiles\TileTexture.cs" />
-    <Compile Include="Assets\Sounds\Sound.cs" />
     <None Include="Assets\Colour Changing.shader" />
     <None Include="Assets\LavaShader.shader" />
     <None Include="Assets\LavaWaves.shader" />
