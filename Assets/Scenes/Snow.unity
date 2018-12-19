@@ -145,14 +145,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e058f382e1ea9a54cb2b05e7bafd64cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Wave: 0
-  MapLength: 1
+  Wave: 1
+  MapLength: 7
   MapLengthExpander: 1
   heightScale: 1
   detailScale: 1
   EnemyLimit: 3
   EnemySpeed: 3
-  EnemySpeedIncrease: 3
+  EnemySpeedIncrease: 1
   RegenLand: 1
 --- !u!4 &192761637
 Transform:
@@ -496,6 +496,11 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 6d03abfda4e2eed46b41dc297ca4c4e1, type: 3}
     volume: 1
     pitch: 1.15
+    source: {fileID: 0}
+  - name: Wave Complete
+    clip: {fileID: 8300000, guid: 3e01e4bd74e23f2458fae419c3ec631f, type: 3}
+    volume: 1
+    pitch: 0.8
     source: {fileID: 0}
 --- !u!4 &1568842578
 Transform:

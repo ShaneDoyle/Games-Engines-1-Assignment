@@ -91,6 +91,7 @@ e90403eeda069970e0b9de1533de13a6 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 2d58ca16854b99daea8c45e9c0f367b7 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 16da51d1b62ef6d4ee1849350434023b UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 a21a0bf898d1dbfae193e731ccf7992d Assembly-CSharp.dll:.AudioManager
+2780ea0625406696aeb349a4f7062863 Assembly-CSharp.dll:.GlobalVariables
 486cd95c82d8305219c352c06b776e1f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 9e61f3535f3c55760a1cedfbd114f4af UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 754551afe4f2531f58476bf14c510657 UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -130,6 +131,7 @@ e1ea12ca952c81d81a9a21fdf34446ed UnityEngine.HoloLens.dll:UnityEngine.EventSyste
 dfd33ff9ae3ce8d7ca1f22b475ec2387 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 96f3ea9f23b6f08e60710ebb4af49174 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
 f16835701e71dd5d6fb1fed4b7aff1d8 Unity.TextMeshPro.dll:TMPro.TMP_Asset
+c816cc81d30c01d6699573125b9e017b Assembly-CSharp.dll:.EndingPlane
 29335b3b5a54b3797eabab11089966a6 Assembly-CSharp.dll:.PlayerMotor
 486cd95c82d8305219c352c06b776e1f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 e34cd9b6c487ff69b20291d232222aff Assembly-CSharp.dll:.CameraOnPlayers
@@ -152,6 +154,7 @@ da21fc3f8056b1f91c3dd09c7bf4f90a UnityEngine.Networking.dll:UnityEngine.Networki
 529a95e9e8e7686c4816e08fbb37183f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 fc061f3ae8a876c0687e86378d4a447c UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 7ca56e063bd071986fff4f513cc4f477 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.NextWave
 f5d8bdeac195b5d7ea9d4de7084614f0 Assembly-CSharp.dll:.PlayerMovement
 72a8523b432c0a5317826b7a9e0a0e79 Unity.TextMeshPro.dll:TMPro.PackageResourceImporterWindow
 e53cc67d84060d628c7f03fc725766d8 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
@@ -170,6 +173,7 @@ e033f131358cea5a0eabf9561e781deb UnityEngine.TestRunner.dll:UnityEngine.TestTool
 28a95668dd28649297d595834fe8417e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 28a95668dd28649297d595834fe8417e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
 6249c19d857c797409723a6f2c7bfc0a Assembly-CSharp.dll:.TentacleBody
+c816cc81d30c01d6699573125b9e017b Assembly-CSharp.dll:.LavaPlane
 ca5fc219da854b7f90e14b9bc140e279 Assembly-CSharp.dll:.Lerp
 d75dc834c5dec688db75a55a1724c90f UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 486cd95c82d8305219c352c06b776e1f UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
@@ -178,13 +182,12 @@ e1ea12ca952c81d81a9a21fdf34446ed UnityEngine.HoloLens.dll:UnityEngine.EventSyste
 dfd33ff9ae3ce8d7ca1f22b475ec2387 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 aac9c55ae7ba4b95b852a7d9c191acd1 Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-ea50bceffe6de4fcaa9d5dadb745c205 Assembly-CSharp.dll:.LandscapeGeneration
+637f74a3310056823aa97f3e65ccecb7 Assembly-CSharp.dll:.LandscapeGeneration
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.RotateBall
 e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 b80eb7aa00cd294816e113730434bb4c Assembly-CSharp.dll:.MoveSnowbomb
 2f9af06a78208a67db480e9bfed4a076 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 9318334b30e9f195f573b2ce00154b95 Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
-248fe16a6feabe4836e767550b98a0f4 Assembly-CSharp.dll:.Generation
+2fb8b6f06b93c01104216e39a30e09fe Assembly-CSharp.dll:.Generation
 93307bd34e39d73fd24e00ec39c25a91 Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.MoveStartingPlane
-486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.MoveEndingPlane

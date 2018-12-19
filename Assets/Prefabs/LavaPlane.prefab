@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 64151485501631828}
   - component: {fileID: 114947708954640580}
   - component: {fileID: 114404588795078994}
+  - component: {fileID: 114998530599671574}
   m_Layer: 0
   m_Name: LavaPlane
   m_TagString: Lava
@@ -125,3 +126,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: 0
   brightnessSpeed: 1
+--- !u!114 &114998530599671574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1494232289707926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd4b28a08f92e24a95c0de8ddf084ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

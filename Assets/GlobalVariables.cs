@@ -18,14 +18,24 @@ public class GlobalVariables : MonoBehaviour
 
     //Enemy Stuff
     public int EnemyLimit;
-    public int EnemySpeed;
-    public int EnemySpeedIncrease;
+    public float EnemySpeed;
+    public float EnemySpeedIncrease;
 
 
     //Built in
     [HideInInspector]
     public bool RegenLand = false;
 
+    //Don't apply additions on first wave.
+    void Start()
+    {
+        Wave--;
+        MapLength--;
+        EnemyLimit--;
+        EnemySpeed -= EnemySpeedIncrease;
+    }
+
+    //Check if game needs to regen land.
     void Update()
     {
         if(RegenLand == true)
@@ -74,8 +84,8 @@ public class GlobalVariables : MonoBehaviour
             //Increase next wave!
             go.GetComponent<GlobalVariables>().Wave++;
             go.GetComponent<GlobalVariables>().MapLength += go.GetComponent<GlobalVariables>().MapLengthExpander;
-            go.GetComponent<GlobalVariables>().EnemySpeed += 1;
-            //go.GetComponent<GlobalVariables>().EnemyLimit++;
+            go.GetComponent<GlobalVariables>().EnemySpeed += EnemySpeedIncrease;
+            go.GetComponent<GlobalVariables>().EnemyLimit++;
             go.GetComponent<GlobalVariables>().detailScale = Random.Range(10, 25);
             go.GetComponent<GlobalVariables>().heightScale = Random.Range(2, 4);
         }

@@ -6,8 +6,6 @@ public class Generation : MonoBehaviour
 {
     public int SpawnTime = 2;
     
-
-    
     private bool StopSpawn = false;
     private float PlayerXPos;
     public GameObject enemy;
@@ -15,8 +13,7 @@ public class Generation : MonoBehaviour
 
     //Gamemode Control
     private int Wave;
-    private int EnemyLimit = 1;
-
+    private int EnemyLimit;
     //public Transform test = GameObject.Find("Your_Name_Here").transform.position;
 
 
@@ -24,7 +21,6 @@ public class Generation : MonoBehaviour
     //Use this for initialization
     void Awake ()
     {
-        //EnemyLimit++; //Compensate for the original object!
         GameObject go = GameObject.Find("Global Variables");
         Wave = go.GetComponent<GlobalVariables>().Wave;
         EnemyLimit = go.GetComponent<GlobalVariables>().EnemyLimit;
@@ -49,9 +45,4 @@ public class Generation : MonoBehaviour
             StopSpawn = false;
         }
     }
-}
-
-public class GamemodeManagement
-{
-    public int Wave = 1;
 }

@@ -50,6 +50,7 @@ public class EndingPlane : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             StartCoroutine(DestroyEverything());
+            FindObjectOfType<AudioManager>().Play("Wave Complete");
         }
     }
 }

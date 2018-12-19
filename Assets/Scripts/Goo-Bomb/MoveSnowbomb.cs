@@ -158,23 +158,6 @@ public class MoveSnowbomb : MonoBehaviour
 
         yield return new WaitForSeconds(3);
         GameObject.Destroy(this.gameObject);
-
-
-        
-        //Instantiate(explosioneffect, transform.position, transform.rotation);
-        /*
-        gameObject.SetActive(false);
-
-        for(int x = 0; x < spheresInRow; x++)
-        {
-            for (int y = 0; y < spheresInRow; y++)
-            {
-                for (int z = 0; z < spheresInRow; z++)
-                {
-                    createDeathEffect(x, y, z);
-                }
-            }
-        }*/
         
     }
 
