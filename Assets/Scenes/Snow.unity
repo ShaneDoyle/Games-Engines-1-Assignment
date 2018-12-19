@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e058f382e1ea9a54cb2b05e7bafd64cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Wave: 1
+  Wave: 0
   MapLength: 1
   MapLengthExpander: 1
   heightScale: 1
@@ -153,6 +153,7 @@ MonoBehaviour:
   EnemyLimit: 3
   EnemySpeed: 3
   EnemySpeedIncrease: 3
+  RegenLand: 1
 --- !u!4 &192761637
 Transform:
   m_ObjectHideFlags: 0
@@ -208,6 +209,10 @@ Prefab:
     - target: {fileID: 54171177614641614, guid: 3718252117b98944080023d4fe1095cb,
         type: 2}
       propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273318261692978, guid: 3718252117b98944080023d4fe1095cb, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -291,6 +296,10 @@ Prefab:
     - target: {fileID: 4991461249873542, guid: 869b0d1434e6e8c4791e1c55124fcaab, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430374800037882, guid: 869b0d1434e6e8c4791e1c55124fcaab, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 869b0d1434e6e8c4791e1c55124fcaab, type: 2}

@@ -47,7 +47,8 @@ public class LandscapeGeneration : MonoBehaviour
     void Update()
     {
         Player[] allPlayers = GameObject.FindObjectsOfType<Player>();
-        if (allPlayers.Length == 0)
+        GameObject[] endingPlane = GameObject.FindGameObjectsWithTag("EndingPlane");
+        if (allPlayers.Length == 0 && endingPlane.Length == 0)
         {
             GenerateLand();
 
