@@ -6,6 +6,8 @@ public class LavaPlane : MonoBehaviour
 {
     public float WaitToAppear;
 
+    GameObject GV = GameObject.Find("Global Variables");
+    
     //Use this for initialization
     void Start()
     {
@@ -22,7 +24,14 @@ public class LavaPlane : MonoBehaviour
     IEnumerator Appear()
     {
         yield return new WaitForSeconds(WaitToAppear);
-        FindObjectOfType<AudioManager>().Play("Pop");
         transform.Translate(0, -20, 0);
+
+        int PlayPopSound = GV.GetComponent<GlobalVariables>().MapLength;
+        if(PlayPopSound > 0 )
+        {
+
+            FindObjectOfType<AudioManager>().Play("Pop");
+        }
+
     }
 }

@@ -27,6 +27,8 @@ public class GlobalVariables : MonoBehaviour
     [HideInInspector]
     public bool RegenLand = false;
     public float EndingPlaneX;
+    [HideInInspector]
+    public bool PlayPopSound = true;
 
     //Don't apply additions on first wave.
     void Start()
@@ -36,6 +38,7 @@ public class GlobalVariables : MonoBehaviour
         EnemyLimit--;
         EnemySpeed -= EnemySpeedIncrease;
     }
+
 
     //Check if game needs to regen land.
     void Update()
