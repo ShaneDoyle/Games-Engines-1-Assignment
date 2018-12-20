@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class GlobalVariables : MonoBehaviour
@@ -44,6 +45,13 @@ public class GlobalVariables : MonoBehaviour
     //Check if game needs to regen land.
     void Update()
     {
+        //Reset game!
+        if(Input.GetKeyDown("escape"))
+        {
+            SceneManager.LoadScene("Snow", LoadSceneMode.Single);
+        }
+
+        //If land needs to be regenerated.
         if(RegenLand == true)
         {
             GameObject GV = GameObject.Find("Global Variables");
@@ -85,7 +93,7 @@ public class GlobalVariables : MonoBehaviour
             MapLength += MapLengthExpander;
             EnemySpeed += EnemySpeedIncrease;
             EnemyLimit++;
-            DetailScale = Random.Range(15, 25);
+            DetailScale = Random.Range(12, 25);
             HeightScale = Random.Range(1, 3);
             PlayPopSound = true;
 

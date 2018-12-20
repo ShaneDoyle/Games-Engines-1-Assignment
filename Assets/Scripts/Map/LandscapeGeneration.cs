@@ -28,7 +28,7 @@ public class LandscapeGeneration : MonoBehaviour
     public GameObject Player2;
 
     //Built in variable.
-    int planeSize = 10;
+    int PlaneSize = 10;
     int MapLength;
     Vector3 StartPos;
     GameObject GV;
@@ -66,52 +66,52 @@ public class LandscapeGeneration : MonoBehaviour
         {
             for (int z = 1; z < 6; z++)
             {
-                Vector3 lavapos = new Vector3((x * planeSize + StartPos.x), 0, (z * planeSize + StartPos.z));
-                Vector3 planepos = new Vector3((x * planeSize + StartPos.x), 0.5f, (z * planeSize + StartPos.z));
-                Vector3 startingplanepos = new Vector3((x * planeSize + StartPos.x), 0.5f, (z * planeSize + StartPos.z));
+                Vector3 LavaPos = new Vector3((x * PlaneSize + StartPos.x), 0, (z * PlaneSize + StartPos.z));
+                Vector3 PlanePos = new Vector3((x * PlaneSize + StartPos.x), 0.5f, (z * PlaneSize + StartPos.z));
+                Vector3 StartingPlanePos = new Vector3((x * PlaneSize + StartPos.x), 0.5f, (z * PlaneSize + StartPos.z));
                 GameObject t;
                 string tilename;
 
                 //Starting Plane.
                 if (x == 0 && z == 2)
                 {
-                    t = (GameObject)Instantiate(LavaPlane, lavapos, Quaternion.identity);
-                    tilename = "Lava Plane (" + ((int)(planepos.x)).ToString() + "_" + ((int)(planepos.z)).ToString() + ")";
+                    t = (GameObject)Instantiate(LavaPlane, LavaPos, Quaternion.identity);
+                    tilename = "Lava Plane (" + ((int)(PlanePos.x)).ToString() + "_" + ((int)(PlanePos.z)).ToString() + ")";
                     t.name = tilename;
 
-                    t = (GameObject)Instantiate(StartingPlane, startingplanepos, Quaternion.identity);
-                    tilename = "Starting Plane (" + ((int)(planepos.x)).ToString() + "_" + ((int)(planepos.z)).ToString() + ")";
+                    t = (GameObject)Instantiate(StartingPlane, StartingPlanePos, Quaternion.identity);
+                    tilename = "Starting Plane (" + ((int)(PlanePos.x)).ToString() + "_" + ((int)(PlanePos.z)).ToString() + ")";
                     t.name = tilename;
                 }
                 //Ending Plane.
                 else if (x == MapLength && z == 2)
                 {
-                    t = (GameObject)Instantiate(LavaPlane, lavapos, Quaternion.identity);
-                    tilename = "Lava Plane (" + ((int)(planepos.x)).ToString() + "_" + ((int)(planepos.z)).ToString() + ")";
+                    t = (GameObject)Instantiate(LavaPlane, LavaPos, Quaternion.identity);
+                    tilename = "Lava Plane (" + ((int)(PlanePos.x)).ToString() + "_" + ((int)(PlanePos.z)).ToString() + ")";
                     t.name = tilename;
 
-                    t = (GameObject)Instantiate(EndingPlane, planepos, Quaternion.identity);
-                    tilename = "Ending Plane (" + ((int)(planepos.x)).ToString() + "_" + ((int)(planepos.z)).ToString() + ")";
+                    t = (GameObject)Instantiate(EndingPlane, PlanePos, Quaternion.identity);
+                    tilename = "Ending Plane (" + ((int)(PlanePos.x)).ToString() + "_" + ((int)(PlanePos.z)).ToString() + ")";
                     t.name = tilename;
-                    planepos = new Vector3((x * planeSize + StartPos.x), 1f, (z * planeSize + StartPos.z));
-                    GV.GetComponent<GlobalVariables>().EndingPlaneX = planepos.x; //Send to global variables.
+                    PlanePos = new Vector3((x * PlaneSize + StartPos.x), 1f, (z * PlaneSize + StartPos.z));
+                    GV.GetComponent<GlobalVariables>().EndingPlaneX = PlanePos.x; //Send to global variables.
                 }
                 //Lava Planes.
                 else if (z != 2 || x < 0 || x >= MapLength)
                 {
-                    t = (GameObject)Instantiate(LavaPlane, lavapos, Quaternion.identity);
-                    tilename = "Lava Plane (" + ((int)(planepos.x)).ToString() + "_" + ((int)(planepos.z)).ToString() + ")";
+                    t = (GameObject)Instantiate(LavaPlane, LavaPos, Quaternion.identity);
+                    tilename = "Lava Plane (" + ((int)(PlanePos.x)).ToString() + "_" + ((int)(PlanePos.z)).ToString() + ")";
                     t.name = tilename;
                 }
                 //Planes.
                 else
                 {
-                    t = (GameObject)Instantiate(LavaPlane, lavapos, Quaternion.identity);
-                    tilename = "Lava Plane (" + ((int)(planepos.x)).ToString() + "_" + ((int)(planepos.z)).ToString() + ")";
+                    t = (GameObject)Instantiate(LavaPlane, LavaPos, Quaternion.identity);
+                    tilename = "Lava Plane (" + ((int)(PlanePos.x)).ToString() + "_" + ((int)(PlanePos.z)).ToString() + ")";
                     t.name = tilename;
 
-                    t = (GameObject)Instantiate(Plane, planepos, Quaternion.identity);
-                    tilename = "Plane (" + ((int)(planepos.x)).ToString() + "_" + ((int)(planepos.z)).ToString() + ")";
+                    t = (GameObject)Instantiate(Plane, PlanePos, Quaternion.identity);
+                    tilename = "Plane (" + ((int)(PlanePos.x)).ToString() + "_" + ((int)(PlanePos.z)).ToString() + ")";
                     t.name = tilename;
                 }
             }

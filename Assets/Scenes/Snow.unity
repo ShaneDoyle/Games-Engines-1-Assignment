@@ -144,7 +144,7 @@ MonoBehaviour:
   WaveCounter: {fileID: 1639626882}
   MapLength: 5
   MapLengthExpander: 1
-  HeightScale: 5
+  HeightScale: 1
   DetailScale: 1
   EnemyLimit: 1
   EnemyHP: 3

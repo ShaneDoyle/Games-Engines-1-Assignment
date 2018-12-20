@@ -29,7 +29,7 @@ public class UpdateLava : MonoBehaviour
     {
         //Go from up to down.
         Brightness += BrightnessSpeed * Reverse;
-        if(Brightness >= 0.05f || Brightness <= -0.40f)
+        if(Brightness >= 0.10f || Brightness <= -0.30f)
         {
             Reverse *= -1;
         }

@@ -77,9 +77,6 @@
     <Compile Include="Assets\Scripts\Tiles\LavaPlane.cs" />
     <Compile Include="Assets\Scripts\Tiles\MoveStartingPlane.cs" />
     <Compile Include="Assets\Scripts\Tiles\UpdateLava.cs" />
-    <None Include="Assets\Colour Changing.shader" />
-    <None Include="Assets\LavaShader.shader" />
-    <None Include="Assets\LavaWaves.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Shane/Desktop/College/Year 4/Semester 1/Games Engines 1/Storm/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
